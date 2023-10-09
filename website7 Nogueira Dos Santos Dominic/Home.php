@@ -8,9 +8,9 @@
 
 <div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
   <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="Media/Emile metz icon.png" width="150vw"></a></h1>
-  <h1><a href="Home.html"></a> Transformationmarket</h1>
+  <h1><a href="Home.php"></a> Transformationmarket</h1>
   <div2>
-  <h1><a href="../website7 Nogueira Dos Santos Dominic/FrenchHome.html"><img src="Media/France.png" width="150vw"></a></h1>
+  <h1><a href="../website7 Nogueira Dos Santos Dominic/FrenchHome.php"><img src="Media/France.png" width="150vw"></a></h1>
   
 </div2>
   
@@ -18,10 +18,10 @@
 
 <div style="overflow:auto">
   <ul>
-      <li><a href="Content/About.html">About</a></li>
-      <li><a href="Content/Contact.html">Contact</a></li>
-      <li><a href="Content/Products.html">Products</a></li>
-      <li><a href="Content/Members.html">Members</a></li>
+      <li><a href="Content/About.php">About</a></li>
+      <li><a href="Content/Contact.php">Contact</a></li>
+      <li><a href="Content/Products.php">Products</a></li>
+      <li><a href="Content/Members.php">Members</a></li>
     </ul>
 
   <div class="main">
