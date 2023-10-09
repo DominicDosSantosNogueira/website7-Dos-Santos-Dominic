@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="Media/Homecss.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Media/Homecss.css">
+    <!-- Include the navigation -->
+    <?php include 'navi.php'; ?>
 </head>
+
 <body style="font-family:Verdana;color:#0c0b0b;">
 
 <div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
@@ -16,13 +19,7 @@
   
 </div>
 
-<div style="overflow:auto">
-  <ul>
-      <li><a href="Content/About.php">About</a></li>
-      <li><a href="Content/Contact.php">Contact</a></li>
-      <li><a href="Content/Products.php">Products</a></li>
-      <li><a href="Content/Members.php">Members</a></li>
-    </ul>
+
 
   <div class="main">
     <h2>The best Transformation market out there</h2>
