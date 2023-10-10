@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Media/Homecss.css">
     
+    
 </head>
 
 <body style="font-family:Verdana;color:#0c0b0b;">
@@ -15,15 +16,11 @@
   <h1><a href="../website7 Nogueira Dos Santos Dominic/FrenchHome.php"><img src="Media/France.png" width="150vw"></a></h1>
   
 </div2>
+
   
 </div>
-<ul>
-      <li><a href="Content/About.php">About</a></li>
-      <li><a href="Content/Contact.php">Contact</a></li>
-      <li><a href="Content/Products.php">Products</a></li>
-      <li><a href="Content/Members.php">Members</a></li>
-    </ul>
 
+<?php include 'navi.php';?>
 
 
   <div class="main">
