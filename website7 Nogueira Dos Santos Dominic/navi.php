@@ -6,16 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-
-
-</div>
+  
 <div style="overflow:auto">
   <ul>
-      <li><a href="Content/About.php">About</a></li>
-      <li><a href="Content/Contact.php">Contact</a></li>
-      <li><a href="Content/Products.php">Products</a></li>
-      <li><a href="Content/Members.php">Members</a></li>
+    <li><a href="About.php">About</a></li>
+    <li><a href="Contact.php">Contact</a></li>
+    <li><a href="Products.php">Products</a></li>
+    <li><a href="Members.php">Members</a></li>
     </ul>
-    </div>
+    
+  
 </body>
 </html>

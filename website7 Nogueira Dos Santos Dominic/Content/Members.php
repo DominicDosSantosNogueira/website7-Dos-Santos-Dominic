@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../Media/Homecss.css">
+<?php include '../navi.php';?>
 </head>
 <body style="font-family:Verdana;color:#0f0c0c;">
 
@@ -16,13 +17,7 @@
   </div>
 
 
-<div style="overflow:auto">
-    <ul>
-        <li><a href="About.php">About</a></li>
-        <li><a href="Contact.php">Contact</a></li>
-        <li><a href="Products.php">Products</a></li>
-        <li><a href="Members.php">Members</a></li>
-      </ul>
+
 
   <div class="table">
     

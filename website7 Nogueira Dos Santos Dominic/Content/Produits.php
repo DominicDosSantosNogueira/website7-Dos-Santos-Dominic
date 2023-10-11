@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../Media/Homecss.css">
+
 </head>
 <body style="font-family:Verdana;color:#0f0d0d;">
 
@@ -16,13 +17,7 @@
   </div>
 
 
-<div style="overflow:auto">
-    <ul>
-        <li><a href="Sur.php">Sur</a></li>
-        <li><a href="Contctfr.php">Contact</a></li>
-        <li><a href="Produits.php">Produits</a></li>
-        <li><a href="Membres.php">Membres</a></li>
-      </ul>
+
 
   <div class="main">
     <h2>Transformations</h2>

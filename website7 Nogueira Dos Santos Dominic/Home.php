@@ -4,7 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Media/Homecss.css">
     
-    
+    <div style="overflow:auto">
+  <ul>
+    <li><a href="Content\About.php">About</a></li>
+    <li><a href="Content\Contact.php">Contact</a></li>
+    <li><a href="Content\Products.php">Products</a></li>
+    <li><a href="Content\Members.php">Members</a></li>
+    </ul>
+
 </head>
 
 <body style="font-family:Verdana;color:#0c0b0b;">
@@ -20,10 +27,11 @@
   
 </div>
 
-<?php include 'navi.php';?>
+
 
 
   <div class="main">
+  
     <h2>The best Transformation market out there</h2>
     <p>You wont find these transformations anywhere else.</p>
     <h3>Bankais</h3>
