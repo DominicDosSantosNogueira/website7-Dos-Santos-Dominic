@@ -14,6 +14,7 @@
     <h1>Products</h1>
   </div>
   <h1><a href="../Content/Produits.php"><img src="../Media/France.png" width="150vw"></a></h1>
+  
   </div>
 
 
@@ -29,6 +30,7 @@
   <li>Super Sayian 4</li><p>Makes you go into a super sayian with Ozaru power and red monkeyfur 8000$</p>
   <li>Ozaru</li><p>Lets you transform into a giant monkey with massive power 3000$</p>
   <li>Gohan Blanco</li><p>Makes your hair white and absurdly long 30000$</p>
+  
 </ul2> 
 
 <h3>Weapon Transformations</h3>
@@ -41,9 +43,12 @@
   <li>Beyond Bankai</li><p>Evolves your Bankai beyond its initial power 2000$</p>
   
 </ul3>
-    
+<?php include '../arr.php';?>
+
+
    
   </div>
+  
   <footer>
     <p>HTML Nogueira Dos Santos Dominic 2022</p>
   </footer>
