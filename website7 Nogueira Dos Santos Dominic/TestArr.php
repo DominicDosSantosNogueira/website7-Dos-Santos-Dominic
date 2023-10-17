@@ -67,6 +67,10 @@
             $parameter = 100;
         }
 
+        foreach ($ppl as $key => ){
+            $value = 3
+        }
+
         $x = 1;
         test($x);
         print $x; // this will print 1
