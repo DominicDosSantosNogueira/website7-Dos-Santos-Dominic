@@ -9,6 +9,19 @@
 <body>
     <h1> welcome
         <?php
+       // if (!is_numeric($_GET["number"])   ||  !is_numeric($_GET["number2"])){
+         //   echo"<h1> GG mate </h1>";
+
+        //}
+
+        $a = "Test";
+        if (isset($a)) {
+        print("The variable a is  set");
+        
+        } else {
+            print("The variable a is not set");
+        };
+       /* 
         print($_GET['Usersname']);
         print('<br>');
         $number = ($_GET["number1"]);
@@ -18,7 +31,7 @@
 
         
 
-
+*/
 ?>
     </h1>
     
