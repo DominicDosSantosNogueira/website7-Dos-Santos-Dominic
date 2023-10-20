@@ -30,7 +30,6 @@ print ("$sum");
         print ("$diff");
         }
 
-
     }
 
 ?>
