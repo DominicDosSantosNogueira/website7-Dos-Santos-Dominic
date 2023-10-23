@@ -8,28 +8,18 @@
 </head>
 <body>
     <?php
-// HTML Select boxes
-$arrayofcolors = array("red","green","yellow","blue","pink","purple",);
-
+    // HTML Select boxes
+    $arrayofcolors = array("red", "green", "yellow", "blue", "pink", "purple");
     ?>
     <form method="GET">
-        <select name="color" >
+        <select name="color">
             <?php
-            for($i = 0; $i < count($arrayofcolors); $i++) {
-                
-                ?>
-                <option value="<? $i ?> "> <? $arrayofcolors[$i] ?> </option>
-                <?php
+            for ($i = 0; $i < count($arrayofcolors); $i++) {
+                echo '<option value="' . $i . '">' . $arrayofcolors[$i] . '</option>';
             }
             ?>
-            </selct>
-            
-<input type="submit" value="GO">
-
-
-
-
+        </select>
+        <input type="submit" value="GO">
     </form>
-    
 </body>
 </html>
