@@ -23,6 +23,25 @@
   <div class="main">
     <h2>Transformations</h2>
 
+    <div class = "AllProducts">
+
+    <?php
+    // Open a file 
+    $handle = fopen('Book3.csv','r');
+    while (!feof($handle))  {
+      $line = fgets($handle);  // this will read one line of text from the csv
+      print($line . "<br>");
+    }
+    // read from teh file - line by line 
+    // close the file
+fclose($handle);
+    ?>
+      <div class = "OneProduct">
+        <div> Garlic</div>
+        <div> Price: 4 Euro / piece </div>
+        <div> description: it kills vampires </div>
+        <img src="">
+    </div>
 <ul2>
   <li>Ultra Instinct</li><p>Gives you a white Aura and allows you to dodge everything 10000$</p>
   <li>Full Power</li><p>Lets you go beyond you maximal strenght 5000$</p>
@@ -43,7 +62,7 @@
   <li>Beyond Bankai</li><p>Evolves your Bankai beyond its initial power 2000$</p>
   
 </ul3>
-<?php include '../arr.php';?>
+
 
 
    

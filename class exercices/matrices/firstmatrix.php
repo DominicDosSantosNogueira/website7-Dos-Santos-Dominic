@@ -14,9 +14,13 @@
             padding: 10px;
 
         }
-        .red[
+        .red{
+            background-color: red;
             
-        ]
+        }
+        .green{
+            background-color: green;
+        }
     </style>
 </head>
 
