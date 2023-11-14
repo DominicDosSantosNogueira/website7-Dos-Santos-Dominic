@@ -1,1 +1,6 @@
-ProductName;Price;Description;Image;StockPotatoes;1;you can make fries;\images\potatoes.jpeg;1000tomatoes;5;They are red;\images\tomatoes.jpeg;100Green leaves;2;We dont eat them;\images\GreenLeave.jpeg;10Garlic;3;It kills vampires;\images\Garlic.jpeg;25
+ProductName;Price;Description;Image;Stock
+
+Potatoes;1;you can make fries;\images\potatoes.jpeg;1000
+tomatoes;5;They are red;\images\tomatoes.jpeg;100
+Green leaves;2;We dont eat them;\images\GreenLeave.jpeg;10
+Garlic;3;It kills vampires;\images\Garlic.jpeg;25
