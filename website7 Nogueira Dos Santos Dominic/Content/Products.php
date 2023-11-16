@@ -23,61 +23,49 @@
 
 
 
-  <div class="main">
-    <h2>Transformations</h2>
+  
+  <?php
+// Your product list in HTML format
+$productList = '<ul2>
+  <li>Ultra Instinct</li>
+  <p>Gives you a white Aura and allows you to dodge everything 10000$</p>
+  <li>Full Power</li>
+  <p>Lets you go beyond your maximal strength 5000$</p>
+  <li>Super Sayian 1</li>
+  <p>Makes your hair glow yellow and increases your strength 6000$</p>
+  <li>Super Sayian 4</li>
+  <p>Makes you go into a super sayian with Ozaru power and red monkey fur 8000$</p>
+  <li>Ozaru</li>
+  <p>Lets you transform into a giant monkey with massive power 3000$</p>
+  <li>Gohan Blanco</li>
+  <p>Makes your hair white and absurdly long 30000$</p>
+</ul2>
 
-    <div class="AllProducts">
+<h3>Weapon Transformations</h3>
 
-      <?php
-      // Open a file 
-      $handle = fopen('Book3.csv', 'r');
-      fgets( $handle );
+<ul3>
+  <li>Bankai</li>
+  <p>Awakens your sword to a stronger force with secret abilities 1000$</p>
+  <li>Shikai</li>
+  <p>Basis Power for any sword 500$</p>
+  <li>Fire Breathing</li>
+  <p>Embeds your sword with a flaming aura 600$</p>
+  <li>Water Breathing</li>
+  <p>Embeds your sword with cutting flowing water 800$</p>
+  <li>Beyond Bankai</li>
+  <p>Evolves your Bankai beyond its initial power 2000$</p>
+</ul3>';
 
-      while (!feof($handle)) {
-        $line = fgets($handle); // this will read one line of text from the csv
-        ?>
-        <?php
+// Save the product list to a file
+$file = fopen('product_list.txt', 'w');
+fwrite($file, $productList);
+fclose($file);
 
-          print($line . "<br>");
-        
-      }
-      // read from teh file - line by line 
-      // close the file
-      fclose($handle);
-      ?>
+// Display the product list on the website
+echo $productList;
+?>
 
-    </div>
-    <ul2>
-      <li>Ultra Instinct</li>
-      <p>Gives you a white Aura and allows you to dodge everything 10000$</p>
-      <li>Full Power</li>
-      <p>Lets you go beyond you maximal strenght 5000$</p>
-      <li>Super Sayian 1</li>
-      <p>Makes your hair glow yellow and increases your strenght 6000$</p>
-      <li>Super Sayian 4</li>
-      <p>Makes you go into a super sayian with Ozaru power and red monkeyfur 8000$</p>
-      <li>Ozaru</li>
-      <p>Lets you transform into a giant monkey with massive power 3000$</p>
-      <li>Gohan Blanco</li>
-      <p>Makes your hair white and absurdly long 30000$</p>
 
-    </ul2>
-
-    <h3>Weapon Transformations</h3>
-
-    <ul3>
-      <li>Bankai</li>
-      <p>Awakens your sword to a stronger force with secret abilities 1000$</p>
-      <li>Shikai</li>
-      <p>Basis Power for any sword 500$</p>
-      <li>Fire Breathing</li>
-      <p>Embedes your sword with a flamming aura 600$</p>
-      <li>Water Breathing</li>
-      <p>Embedes your sword with cutting flowing water 800$</p>
-      <li>Beyond Bankai</li>
-      <p>Evolves your Bankai beyond its initial power 2000$</p>
-
-    </ul3>
 
 
 
