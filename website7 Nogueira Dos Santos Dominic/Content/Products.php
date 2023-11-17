@@ -49,6 +49,9 @@
             echo '<p>' . $info . '</p>';
           }
 
+          // Add a buy button with a link or form for purchasing
+          echo '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
+
           // Close the product container
           echo '</div>';
         }
@@ -60,6 +63,14 @@
 
     </div>
 </div>
+
+<script>
+  function buyProduct(productId) {
+    // You can implement your own logic here for handling the purchase, e.g., redirect to a purchase page
+    alert('Product ' + productId + ' added to the cart. Implement your purchase logic here.');
+  }
+</script>
+
 
 
     
