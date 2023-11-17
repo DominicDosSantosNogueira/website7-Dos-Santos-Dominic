@@ -21,6 +21,7 @@
   <h1><a href="Home.php"></a> Transformationmarket</h1>
   <div2>
   <h1><a href="../website7 Nogueira Dos Santos Dominic/FrenchHome.php"><img src="Media/France.png" width="150vw"></a></h1>
+  <a href="LoginRegister.php"><button>Login/Register</button></a>
   
 </div2>
 

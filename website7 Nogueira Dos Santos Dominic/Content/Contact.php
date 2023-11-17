@@ -16,6 +16,7 @@
 
  
   <h1><a href="../Content/Contctfr.php"><img src="../Media/France.png" width="150vw"></a></h1>
+  <a href="../LoginRegister.php"><button>Login/Register</button></a>
   
 </div>
 
