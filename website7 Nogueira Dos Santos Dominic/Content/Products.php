@@ -42,18 +42,18 @@
         // Check if the line is not empty
         if (!empty($line)) {
           // Start a new product container with the specified style
-          echo '<div class="OneProduct">';
+          print '<div class="OneProduct">';
           
           // Output product information inside the container
           foreach ($product as $info) {
-            echo '<p>' . $info . '</p>';
+            print '<p>' . $info . '</p>';
           }
 
           // Add a buy button with a link or form for purchasing
-          echo '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
+          print '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
 
           // Close the product container
-          echo '</div>';
+          print '</div>';
         }
       }
 
