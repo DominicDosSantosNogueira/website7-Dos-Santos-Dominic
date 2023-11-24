@@ -43,9 +43,11 @@ if(isset($_POST['compute'])) {
         default:
             $result = "Invalid operation";
             break;
+        
     } 
 
     print "<p>Result: $result</p>";
+
 
     $ex;
     $showForm = false;
