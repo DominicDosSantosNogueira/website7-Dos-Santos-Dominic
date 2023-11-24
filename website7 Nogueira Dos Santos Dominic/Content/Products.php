@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Media/Homecss.css">
-  <link rel="stylesheet" href="myStyle.css">
+  <link rel="stylesheet" href="mystyle.css">
   <?php include '../navi.php'; ?>
 </head>
 
@@ -38,7 +38,7 @@
       while (!feof($handle)) {
         $line = fgets($handle); // Read one line of text from the csv
         $product = explode(',', $line); // Assuming products are separated by commas in your file
-
+          
         // Check if the line is not empty
         if (!empty($line)) {
           // Start a new product container with the specified style

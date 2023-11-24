@@ -22,8 +22,11 @@
         ?>
         <?php
 
-          print($line . "<br>");
-        
+          //print($line . "<br>");
+        $Columns = explode(";", $line);
+        ?>
+
+        <?php
       }
       // read from teh file - line by line 
       // close the file

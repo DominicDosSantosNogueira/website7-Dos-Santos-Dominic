@@ -83,6 +83,7 @@ if(isset($_POST['compute'])) {
     <input type="number" name="num2" id="num2" required>
 
     <button type="submit" name="compute">Compute</button>
+
 </form>
 
 </body>
