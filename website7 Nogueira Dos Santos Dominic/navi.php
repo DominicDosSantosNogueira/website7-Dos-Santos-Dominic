@@ -26,22 +26,28 @@
       ?> " href="Home.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
         else  print "Accueil"; ?>  </a>
         <a class=" <?php
-      if ($activePage == 1) print("active");
+      if ($activePage == 2) print("active");
       else  print("inactive");
       ?> " href="About.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
         else  print "Sur"; ?>  </a>
         <a class=" <?php
-      if ($activePage == 1) print("active");
+      if ($activePage == 3) print("active");
       else  print("inactive");
       ?> " href="Contact.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
         else  print "Contact"; ?>  </a>
         <a class=" <?php
-      if ($activePage == 1) print("active");
+      if ($activePage == 4) print("active");
       else  print("inactive");
       ?> " href="Members.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
         else  print "Membres"; ?>  </a>
+        <a class=" <?php
+      if ($activePage == 4) print("active");
+      else  print("inactive");
+      ?> " href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+        else  print "Produits"; ?>  </a>
       
-
+      
+  
       
 
 <?php 
@@ -55,7 +61,7 @@ if ($language ==  "EN") {
           <a class="inactive" href="<?= $_SERVER["PHP_SELF"] ?>?lang = EN ">English</a>
 <?php
   }
-
+  }
   ?>
   
     <div style="overflow:auto">

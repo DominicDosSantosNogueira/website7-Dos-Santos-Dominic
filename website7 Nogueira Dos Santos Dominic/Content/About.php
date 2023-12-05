@@ -4,8 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../Media/Homecss.css">
 <?php include '../navi.php';?>
+
 </head>
 <body style="font-family:Verdana;color:#0c0b0b;">
+<?php  
+$activePage == 2;
+navBar(2, $language)
+
+
+?>
  
   <div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
@@ -16,7 +23,7 @@
 
   <h1><a href="../Content/Sur.php"><img src="../Media/France.png" width="150vw"></a></h1>
   <a href="../LoginRegister.php"><button>Login/Register</button></a>
-    
+  
       
     
   
