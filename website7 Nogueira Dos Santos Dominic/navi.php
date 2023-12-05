@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mystyle.css">
   <title>Document</title>
 </head>
 
@@ -20,57 +21,47 @@
 
     ?>
     <div class="navbar">
-      <a class=" <?php
-      if ($activePage == 1) print("active");
-      else  print("inactive");
-      ?> " href="Home.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
-        else  print "Accueil"; ?>  </a>
+      
         <a class=" <?php
       if ($activePage == 2) print("active");
       else  print("inactive");
-      ?> " href="About.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+      ?> " href="About.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "About";
         else  print "Sur"; ?>  </a>
         <a class=" <?php
       if ($activePage == 3) print("active");
       else  print("inactive");
-      ?> " href="Contact.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+      ?> " href="Contact.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Contact";
         else  print "Contact"; ?>  </a>
         <a class=" <?php
       if ($activePage == 4) print("active");
       else  print("inactive");
-      ?> " href="Members.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+      ?> " href="Members.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Members";
         else  print "Membres"; ?>  </a>
         <a class=" <?php
-      if ($activePage == 4) print("active");
+      if ($activePage == 5) print("active");
       else  print("inactive");
-      ?> " href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+      ?> " href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Products";
         else  print "Produits"; ?>  </a>
       
       
   
       
 
-<?php 
+      <?php 
 if ($language ==  "EN") {
-
 ?>
-      <a class="inactive" href="<?= $_SERVER["PHP_SELF"] ?>?lang = FR ">Francais</a>
-      <?php
-  } else {
-    ?>
-          <a class="inactive" href="<?= $_SERVER["PHP_SELF"] ?>?lang = EN ">English</a>
+<a class="inactive" href="<?= $_SERVER["PHP_SELF"] ?>?lang=FR">Francais</a>
 <?php
+} else {
+?>
+<a class="inactive" href="<?= $_SERVER["PHP_SELF"] ?>?lang=EN">English</a>
+<?php
+}
   }
-  }
-  ?>
+?>
+
   
-    <div style="overflow:auto">
-      <ul>
-        <li><a href="About.php">About</a></li>
-        <li><a href="Contact.php">Contact</a></li>
-        <li><a href="Products.php">Products</a></li>
-        <li><a href="Members.php">Members</a></li>
-      </ul>
+   
 
 
 </body>

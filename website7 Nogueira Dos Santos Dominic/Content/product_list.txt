@@ -1,5 +1,5 @@
-
-  Ultra Instinct, Gives you a white Aura and allows you to dodge everything,  10000$
+ProductID,ProductName,ProductDescription,ProductPrice,ProductImage
+  Ultra Instinct, Gives you a white Aura and allows you to dodge everything,  10000$,UI.png
   Full Power, Lets you go beyond your maximal strength,  5000$
   Super Sayian, Makes your hair glow yellow and increases your strength,  6000$
   Super Sayian 4, Makes you go into a super sayian with Ozaru power and red monkey fur,  8000$

@@ -3,7 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../Media/Homecss.css">
-<?php include '../navi.php';?>
+<?php
+  $activePage = 4; 
+  include '../navi.php';
+  navBar($activePage, $language);?>
 </head>
 <body style="font-family:Verdana;color:#0f0c0c;">
 

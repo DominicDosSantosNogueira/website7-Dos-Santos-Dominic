@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Media/Homecss.css">
   <link rel="stylesheet" href="mystyle.css">
-  <?php include '../navi.php'; ?>
+  <?php
+  $activePage = 5; 
+  include '../navi.php';
+  navBar($activePage, $language);?>
 </head>
 
 <body style="font-family:Verdana;color:#0f0d0d;">
@@ -38,24 +41,30 @@
       while (!feof($handle)) {
         $line = fgets($handle); // Read one line of text from the csv
         $product = explode(',', $line); // Assuming products are separated by commas in your file
-          
+    
         // Check if the line is not empty
         if (!empty($line)) {
-          // Start a new product container with the specified style
-          print '<div class="OneProduct">';
-          
-          // Output product information inside the container
-          foreach ($product as $info) {
-            print '<p>' . $info . '</p>';
-          }
-
-          // Add a buy button with a link or form for purchasing
-          print '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
-
-          // Close the product container
-          print '</div>';
+            // Start a new product container with the specified style
+            print '<div class="OneProduct">';
+    
+            // Output product information inside the container
+            for ($i = 1; $i < count($product); $i++) {
+                // Display images using an <img> tag
+                if ($i == count($product) - 1) {
+                    print '<img src="../Media/' . $product[$i] . '" alt="' . $product[1] . '">';
+                } else {
+                    print '<p>' . $product[$i] . '</p>';
+                }
+            }
+    
+            // Add a buy button with a link or form for purchasing
+            print '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
+    
+            // Close the product container
+            print '</div>';
         }
-      }
+    }
+    
 
       // Close the file
       fclose($handle);
