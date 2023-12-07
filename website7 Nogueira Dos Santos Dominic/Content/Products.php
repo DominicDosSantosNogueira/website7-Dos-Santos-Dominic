@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Media/Homecss.css">
   <link rel="stylesheet" href="mystyle.css">
+  <link rel = "stylesheet" type = "text/css" href = "myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 5; 
   include '../navi.php';
@@ -75,7 +76,7 @@
 
 <script>
   function buyProduct(productId) {
-    // You can implement your own logic here for handling the purchase, e.g., redirect to a purchase page
+    
     alert('Product ' + productId + ' added to the cart. Implement your purchase logic here.');
   }
 </script>
