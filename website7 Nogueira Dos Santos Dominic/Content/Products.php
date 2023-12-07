@@ -74,6 +74,17 @@
     </div>
 </div>
 
+
+
+
+
+<?php $language != "EN";
+
+
+
+print 'moin';
+?>
+
 <script>
   function buyProduct(productId) {
     

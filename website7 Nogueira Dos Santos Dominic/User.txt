@@ -1,6 +1,4 @@
-test;111;Belgium
-dd;11;Belgium
-sr;123;Luxembourg
-kalled;1;Luxembourg
-Dominic;123;Luxembourg
-rt;44;Luxembourg
+Dominic;1;Luxembourg
+p;1;Luxembourg
+po;1;Luxembourg
+sr;1;Luxembourg

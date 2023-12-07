@@ -16,11 +16,11 @@
 }
 
 .inactive {
-    background-color: #6e807b;
+    background-color: violet;
 }
 
 .active {
-    background-color: black;
+    background-color: blue;
 }
 
 .AllProducts {
