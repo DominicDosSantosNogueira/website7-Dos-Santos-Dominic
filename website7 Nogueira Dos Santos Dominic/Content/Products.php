@@ -2,14 +2,18 @@
 <html>
 
 <head>
+  <!-- Head content -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Media/Homecss.css">
   <link rel="stylesheet" href="mystyle.css">
-  <link rel = "stylesheet" type = "text/css" href = "myStyle.css?val=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
-  $activePage = 5; 
+  $activePage = 5;
   include '../navi.php';
-  navBar($activePage, $language);?>
+  navBar($activePage, $language);
+  
+include("content_" . strtolower($language) . ".php");
+?>
 </head>
 
 <body style="font-family:Verdana;color:#0f0d0d;">
@@ -20,85 +24,65 @@
           src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="../Home.php"> Transformationmarket</a></h1>
-      <h1>Products</h1>
+      <h1><?= $products_title ?></h1>
     </div>
-    <h1><a href="../Content/Produits.php"><img src="../Media/France.png" width="150vw"></a></h1>
+
     <a href="../LoginRegister.php"><button>Login/Register</button></a>
   </div>
 
-
-
-
   <div class="main">
-    <h2>Transformations</h2>
+  <h2><?= $products_title ?></h2>
 
-    <div class="AllProducts">
+  <div class="AllProducts">
+    <?php
+    $handle = fopen('product_list.txt', 'r');
+    fgets($handle); 
 
-      <?php
-      // Open a file 
-      $handle = fopen('product_list.txt', 'r');
-      fgets($handle); // Read the header and discard it
+    while (!feof($handle)) {
+      $line = fgets($handle);
+      $product = explode(',', $line); 
 
-      while (!feof($handle)) {
-        $line = fgets($handle); // Read one line of text from the csv
-        $product = explode(',', $line); // Assuming products are separated by commas in your file
-    
-        // Check if the line is not empty
-        if (!empty($line)) {
-            // Start a new product container with the specified style
-            print '<div class="OneProduct">';
-    
-            // Output product information inside the container
-            for ($i = 1; $i < count($product); $i++) {
-                // Display images using an <img> tag
-                if ($i == count($product) - 1) {
-                    print '<img src="../Media/' . $product[$i] . '" alt="' . $product[1] . '">';
-                } else {
-                    print '<p>' . $product[$i] . '</p>';
-                }
-            }
-    
-            // Add a buy button with a link or form for purchasing
-            print '<button onclick="buyProduct(' . $product[0] . ')">Buy</button>'; // Assuming the first element is a unique product identifier
-    
-            // Close the product container
-            print '</div>';
+      if (!empty($line)) {
+        print '<div class="OneProduct">';
+
+        // Determine the index for the description based on the language
+        $description_index = ($language == 'FR') ? 3 : 2;
+        $price_index = 4;
+        $image_index = 5;
+
+        // Output product information inside the container
+        for ($i = 1; $i < count($product); $i++) {
+          if ($i == $description_index || $i == $price_index) {
+            print '<p>' . $product[$i] . '</p>';
+          } elseif ($i == $image_index) {
+            print '<img src="../Media/' . $product[$i] . '" alt="' . $product[1] . '">';
+          }
+          // Add an else condition to avoid printing English description and price when language is French
         }
+        
+
+        print '<button onclick="buyProduct(' . $product[0] . ')">' . $buy_button_text . '</button>'; 
+        print '</div>';
+      }
     }
-    
 
-      // Close the file
-      fclose($handle);
-      ?>
-
-    </div>
+    // Close the file
+    fclose($handle);
+    ?>
+  </div>
 </div>
 
 
 
-
-
-
-
-<script>
-  function buyProduct(productId) {
-    
-    alert('Product ' + productId + ' added to the cart. Implement your purchase logic here.');
-  }
-</script>
-
-
-
-    
-</div>
-
+  <script>
+    function buyProduct(productId) {
+      alert('Product ' + productId + ' added to the cart. Implement your purchase logic here.');
+    }
+  </script>
 
   <footer>
     <p>HTML Nogueira Dos Santos Dominic 2022</p>
   </footer>
-
-
-
 </body>
 
 </html>

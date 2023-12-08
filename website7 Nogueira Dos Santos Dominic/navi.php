@@ -21,7 +21,11 @@
 
     ?>
     <div class="navbar">
-      
+    <a class=" <?php
+      if ($activePage == 1) print("active");
+      else  print("inactive");
+      ?> " href="Home.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Home";
+        else  print "Maison"; ?>  </a>
         <a class=" <?php
       if ($activePage == 2) print("active");
       else  print("inactive");
