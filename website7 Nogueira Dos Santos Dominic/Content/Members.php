@@ -45,7 +45,7 @@ include("content_" . strtolower($language) . ".php");
     </table>
   </div>
   <footer>
-    <p>HTML Nogueira Dos Santos Dominic 2022</p>
+    <p>HTML Nogueira Dos Santos Dominic 2024</p>
   </footer>
 
 </body>

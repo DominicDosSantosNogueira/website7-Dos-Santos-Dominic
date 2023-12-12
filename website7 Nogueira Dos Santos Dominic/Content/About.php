@@ -17,7 +17,7 @@ include("content_" . strtolower($language) . ".php");
   ?>
 </head>
 
-<body style="font-family: Verdana; color: #0c0b0b;">
+<body style="font-family: a; color: #0c0b0b;">
 
   <div style="background-color: #e5e5e5; padding: 15px; text-align: center;" class="flex-container">
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
@@ -42,7 +42,7 @@ include("content_" . strtolower($language) . ".php");
   </div>
 
   <footer>
-    <p>HTML Nogueira Dos Santos Dominic 2022</p>
+    <p>HTML Nogueira Dos Santos Dominic 2024</p>
   </footer>
 
 </body>

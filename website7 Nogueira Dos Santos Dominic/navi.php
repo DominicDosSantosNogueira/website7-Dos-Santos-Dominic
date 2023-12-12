@@ -46,6 +46,11 @@
       else  print("inactive");
       ?> " href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Products";
         else  print "Produits"; ?>  </a>
+        <a class=" <?php
+      if ($activePage == 6) print("active");
+      else  print("inactive");
+      ?> " href="AddProduct.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Add Products";
+        else  print "Ajouter produits"; ?>  </a>
       
       
   

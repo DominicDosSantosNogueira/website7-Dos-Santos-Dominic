@@ -34,54 +34,56 @@ include("content_" . strtolower($language) . ".php");
   <h2><?= $products_title ?></h2>
 
   <div class="AllProducts">
-    <?php
-    $handle = fopen('product_list.txt', 'r');
-    fgets($handle); 
+  <?php
+  $handle = fopen('product_list.txt', 'r');
+  fgets($handle);
 
-    while (!feof($handle)) {
-      $line = fgets($handle);
-      $product = explode(',', $line); 
+  while (!feof($handle)) {
+    $line = fgets($handle);
+    $product = explode(',', $line);
 
-      if (!empty($line)) {
-        print '<div class="OneProduct">';
+    if (!empty($line)) {
+      print '<div class="OneProduct">';
+      
+      // Assuming the product name is at index 1
+      print '<h3>' . $product[1] . '</h3>';
 
-        // Determine the index for the description based on the language
-        $description_index = ($language == 'FR') ? 3 : 2;
-        $price_index = 4;
-        $image_index = 5;
+      // Determine the index for the description based on the language
+      $description_index = ($language == 'FR') ? 3 : 2;
+      $price_index = 4;
+      $image_index = 5;
 
-        // Output product information inside the container
-        for ($i = 1; $i < count($product); $i++) {
-          if ($i == $description_index || $i == $price_index) {
-            print '<p>' . $product[$i] . '</p>';
-          } elseif ($i == $image_index) {
-            print '<img src="../Media/' . $product[$i] . '" alt="' . $product[1] . '">';
-          }
-          // Add an else condition to avoid printing English description and price when language is French
+      // Output product information inside the container
+      for ($i = 1; $i < count($product); $i++) {
+        if ($i == $description_index || $i == $price_index) {
+          print '<p>' . $product[$i] . '</p>';
+        } elseif ($i == $image_index) {
+          print '<img src="../Media/uploads/' . $product[$i] . '" alt="' . $product[1] . '">';
         }
-        
-
-        print '<button onclick="buyProduct(' . $product[0] . ')">' . $buy_button_text . '</button>'; 
-        print '</div>';
+        // Add an else condition to avoid printing English description and price when language is French
       }
-    }
 
-    // Close the file
-    fclose($handle);
-    ?>
-  </div>
+      print '<button onclick="buyProduct(' . $product[0] . ')">' . $buy_button_text . '</button>';
+      print '</div>';
+    }
+  }
+
+  // Close the file
+  fclose($handle);
+  ?>
 </div>
+
 
 
 
   <script>
     function buyProduct(productId) {
-      alert('Product ' + productId + ' added to the cart. Implement your purchase logic here.');
+      alert('Product ' + productId + ' added to the cart. ');
     }
   </script>
 
   <footer>
-    <p>HTML Nogueira Dos Santos Dominic 2022</p>
+    <p>HTML Nogueira Dos Santos Dominic 2024</p>
   </footer>
 </body>
 
