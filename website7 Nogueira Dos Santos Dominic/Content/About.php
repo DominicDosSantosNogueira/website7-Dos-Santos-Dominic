@@ -10,14 +10,14 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 2;
-  include '../navi.php';
+  include '../navi.txt';
   navBar($activePage, $language);
-include("content_" . strtolower($language) . ".php");
+include("content_" . strtolower($language) . ".txt");
 
   ?>
 </head>
 
-<body style="font-family: a; color: #0c0b0b;">
+<body style="font-family: Verdana; color: #141212;">
 
   <div style="background-color: #e5e5e5; padding: 15px; text-align: center;" class="flex-container">
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
@@ -38,7 +38,7 @@ include("content_" . strtolower($language) . ".php");
 
   <div class="right">
     <h2><?= $ui_title ?></h2>
-    <img src="../Media/UI.png" width="500vw">
+    <img src="../Media/uploads/UI.png" width="500vw">
   </div>
 
   <footer>

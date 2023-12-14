@@ -10,10 +10,10 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 6; // Adjust the activePage based on your navigation structure
-  include '../navi.php';
+  include '../navi.txt';
   navBar($activePage, $language);
 
-  include("content_" . strtolower($language) . ".php");
+  include("content_" . strtolower($language) . ".txt");
   ?>
 </head>
 
@@ -93,6 +93,8 @@ function generateProductId($filename)
 
       <label for="description">Description:</label>
       <textarea name="description" rows="4" required></textarea><br>
+
+      
 
       <label for="price">Price:</label>
       <input type="number" name="price" step="0.01" required><br>

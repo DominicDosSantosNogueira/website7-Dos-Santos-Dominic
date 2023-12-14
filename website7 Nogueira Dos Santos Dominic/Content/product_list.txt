@@ -3,4 +3,4 @@
   2, Super Sayian,Makes your hair glow yellow and increases your strength,Met tes cheveux en jaune et augmente ta force,6000$,ssj1.jpg
   3, Super Sayian 4, Makes you go into a super sayian with Ozaru power and red monkey fur,Te permet d'utiliser super sayan ave la force d'ozaru et de donne de peu rouge,8000$,ssj4.png
   4, Ozaru, Lets you transform into a giant monkey with massive power,Te permet de transformer en macace géant ave un pouvoir gégantesque,3000$,ozaru.png
-  5, Beast , Makes your hair white and absurdly long,Blanchis tes cheveux et te donne dec cheveux de longure absurde, 30000$,Beast.png6,ee,ee,0.01,France.png
+  5, Beast , Makes your hair white and absurdly long,Blanchis tes cheveux et te donne des cheveux de longure absurde, 30000$,Beast.png

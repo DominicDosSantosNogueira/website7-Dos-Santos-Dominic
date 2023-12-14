@@ -8,10 +8,10 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 4;
-  include '../navi.php';
+  include '../navi.txt';
   navBar($activePage, $language);
   
-include("content_" . strtolower($language) . ".php");
+include("content_" . strtolower($language) . ".txt");
 
   ?>
 </head>
