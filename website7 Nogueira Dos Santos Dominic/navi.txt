@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +17,21 @@
   //print($_server["PHP_SELF"]);
   if (isset($_GET["lang"])) {
     $language = $_GET["lang"];
+  }
+
+  $arrayOfStrings = [];
+  $fileHandle=fopen("Translations.csv","r");
+  while (!feof($fileHandle)){
+    $OneLine = fgets($fileHandle);
+    $ArrayOfExplodedStrings = explode(";", $OneLine);
+    if ($language == "en")
+    {
+    $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[1];
+    }
+    else{
+      $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[2];
+    }
+
   }
 
   function navBar($activePage, $language)

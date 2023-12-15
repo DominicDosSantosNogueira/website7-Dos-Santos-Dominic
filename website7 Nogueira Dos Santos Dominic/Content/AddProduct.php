@@ -22,7 +22,7 @@
   <div style="background-color: #e5e5e5; padding: 15px; text-align: center;" class="flex-container">
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
-      <h1><a href="../Home.php"> Transformationmarket</a></h1>
+      <h1><a href="Home.php"> Transformationmarket</a></h1>
       <h1><?= $products_title ?></h1>
     </div>
     <a href="../LoginRegister.php"><button>Login/Register</button></a>
@@ -31,10 +31,31 @@
   <div class="main">
     <h2>Add Product</h2>
     <?php
+
+
+$productId = generateProductId('product_list.txt');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $productName = $_POST["productName"];
-    $description = $_POST["description"];
-    $price = $_POST["price"];
+  $productName = $_POST["productName"];
+  $description = $_POST["description"];
+  $description_fr = $_POST["description_fr"]; // Added line for French description
+  $price = $_POST["price"];
+
+  // Rest of your code...
+  echo "English Description: $description<br>";
+  echo "French Description: $description_fr<br>";
+  
+// Generate a new product ID
+
+
+// Rest of your code...
+
+$newProduct = "$productId,$productName,$description,$description_fr,$price," . basename($_FILES['image']['name']) . PHP_EOL;
+
+// Rest of your code...
+
+
+
 
     // Generate a new product ID
     $productId = generateProductId('product_list.txt');
@@ -45,19 +66,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
 
     if ($imageFileType == 'png') {
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-            // Append the new product to the product list file
-            $newProduct = "$productId,$productName,$description,$price," . basename($_FILES['image']['name']) . PHP_EOL;
-            file_put_contents('product_list.txt', $newProduct, FILE_APPEND | LOCK_EX);
-
-            echo '<p>Product added successfully!</p>';
-        } else {
-            echo '<p>Error uploading the image.</p>';
-        }
-    } else {
-        echo '<p>Only PNG images are allowed.</p>';
-    }
-}
+      if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+          // Append the new product to the product list file
+          $newProduct = "$productId,$productName,$description,$description_fr,$price," . basename($_FILES['image']['name']) . PHP_EOL;
+          file_put_contents('product_list.txt', $newProduct, FILE_APPEND | LOCK_EX);
+  
+          echo '<p>Product added successfully!</p>';
+      } else {
+          echo '<p>Error uploading the image.</p>';
+      }
+  } else {
+      echo '<p>Only PNG images are allowed.</p>';
+  }
+}  
 
 // Function to generate a new product ID
 function generateProductId($filename)
@@ -87,23 +108,29 @@ function generateProductId($filename)
 ?>
 
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-      <label for="productName">Product Name:</label>
-      <input type="text" name="productName" required><br>
+  <!-- ... (previous HTML code) ... -->
 
-      <label for="description">Description:</label>
-      <textarea name="description" rows="4" required></textarea><br>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+  <label for="productName">Product Name:</label>
+  <input type="text" name="productName" required><br>
 
-      
+  <label for="description">Description (English):</label>
+  <textarea name="description" rows="4" required></textarea><br>
 
-      <label for="price">Price:</label>
-      <input type="number" name="price" step="0.01" required><br>
+  <label for="description_fr">Description (French):</label>
+  <textarea name="description_fr" rows="5" required></textarea><br>
 
-      <label for="image">Image (PNG only):</label>
-      <input type="file" name="image" accept=".png" required><br>
+  <label for="price">Price:</label>
+  <input type="number" name="price" step="0.01" required><br>
 
-      <input type="submit" value="Add Product">
-    </form>
+  <label for="image">Image (PNG only):</label>
+  <input type="file" name="image" accept=".png" required><br>
+
+  <input type="submit" value="Add Product">
+</form>
+
+<!-- ... (remaining HTML code) ... -->
+
   </div>
 
   <footer>

@@ -4,3 +4,8 @@
   3, Super Sayian 4, Makes you go into a super sayian with Ozaru power and red monkey fur,Te permet d'utiliser super sayan ave la force d'ozaru et de donne de peu rouge,8000$,ssj4.png
   4, Ozaru, Lets you transform into a giant monkey with massive power,Te permet de transformer en macace géant ave un pouvoir gégantesque,3000$,ozaru.png
   5, Beast , Makes your hair white and absurdly long,Blanchis tes cheveux et te donne des cheveux de longure absurde, 30000$,Beast.png
+  6,Genkidama4,en,fr,354,France.png
+  7,KAmehameha,Blue beam,beam bleu,500,kamehameha.png
+8,k,hthth,ththt,3543,kamehameha.png
+9,ee,frgbrtb,gtnh,45667,kamehameha.png
+10,grgr,rgr,grgrt,6576,kamehameha.png

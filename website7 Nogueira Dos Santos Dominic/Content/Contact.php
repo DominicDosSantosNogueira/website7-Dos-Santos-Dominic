@@ -17,7 +17,7 @@
   <div style="background-color: #e5e5e5; padding: 15px; text-align: center;" class="flex-container">
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
-      <h1><a href="../Home.php"> Transformationmarket</a></h1>
+      <h1><a href="Home.php"> Transformationmarket</a></h1>
       <h1><?= $contact_title ?></h1>
     </div>
 
