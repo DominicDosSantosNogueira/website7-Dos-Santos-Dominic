@@ -12,7 +12,7 @@
   $activePage = 2;
   include '../navi.txt';
   navBar($activePage, $language);
-include("content_" . strtolower($language) . ".txt");
+
 
   ?>
 </head>
@@ -23,21 +23,21 @@ include("content_" . strtolower($language) . ".txt");
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $about_title ?></h1>
+      <h1><?= $arrayOfStrings["about_title"]?></h1>
     </div>
 
-    <a href="../LoginRegister.php"><button>Login/Register</button></a>
+    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">
     <h2>Transformation Market</h2>
-    <p><?= $about_description ?></p>
-    <h3><?= $updates_title ?></h3>
-    <p><?= $updates_description ?></p>
+    <p><?= $arrayOfStrings["about_description"] ?></p>
+    <h3><?= $arrayOfStrings["Aboutupdates"] ?></h3>
+    <p><?= $arrayOfStrings["Aboutupdates2"]  ?></p>
   </div>
 
   <div class="right">
-    <h2><?= $ui_title ?></h2>
+    <h2><?= $arrayOfStrings["ui_title"]  ?></h2>
     <img src="../Media/uploads/UI.png" width="500vw">
   </div>
 

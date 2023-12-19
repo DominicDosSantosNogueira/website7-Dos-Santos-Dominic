@@ -24,6 +24,8 @@
   while (!feof($fileHandle)){
     $OneLine = fgets($fileHandle);
     $ArrayOfExplodedStrings = explode(";", $OneLine);
+    $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $language == "EN"?$ArrayOfExplodedStrings[1]:$ArrayOfExplodedStrings[2];
+    /*
     if ($language == "en")
     {
     $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[1];
@@ -31,7 +33,7 @@
     else{
       $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[2];
     }
-
+*/
   }
 
   function navBar($activePage, $language)

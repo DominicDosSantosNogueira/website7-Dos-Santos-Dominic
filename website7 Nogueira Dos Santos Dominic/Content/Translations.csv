@@ -1,10 +1,16 @@
 Stringidentifier;StringTexten;StringTextfr
 Productflec;The best Transformation market out there;Le meilleur marché de la transformation
 Productfind;You wont find these transformations anywhere else;Vous ne trouverez pas ces transformations ailleurs
-Aboutexplanations;In this enterprise we sell most of teh new achievable transformations.;Dans cette entreprise nous vendons la plupart des transformations réalisables. 
+about_description;In this enterprise we sell most of the new achievable transformations.;Dans cette entreprise nous vendons la plupart des transformations réalisables. 
 Aboutupdates;Updates;Mise a jour
-Aboutupdates2; Be aware that soem outdated transformations may leave the sell markedt and new ones may be addded.;Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.
+Aboutupdates2; Be aware that some outdated transformations may leave the sell markedt and new ones may be addded.;Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.
 ContactLocation;Location;Emplacement
 ContactEmail;Send email for support;Envoyer un email pour le support
-ContactPhone;Phone number;Numéro de téléphone
+ContactPhone;Phone number: 420 690 007;Numéro de téléphone:420 690 007
 ProductBuy;Buy;Acheter
+about_title;About;Sur 
+ui_title;UI;UI 
+contact_title;Contact;Contact
+Contactplace;Jojo Land;Pays Jojo
+Login/Register;Login/Register;Connecter/Enregistrer
+members_title;Members;Membres

@@ -25,7 +25,7 @@
       <h1><a href="Home.php"> Transformationmarket</a></h1>
       <h1><?= $products_title ?></h1>
     </div>
-    <a href="../LoginRegister.php"><button>Login/Register</button></a>
+    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">

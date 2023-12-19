@@ -22,10 +22,10 @@ include("content_" . strtolower($language) . ".txt");
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $members_title ?></h1>
+      <h1><?= $arrayOfStrings["members_title"] ?></h1>
     </div>
 
-    <a href="../LoginRegister.php"><button>Login/Register</button></a>
+    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="table">

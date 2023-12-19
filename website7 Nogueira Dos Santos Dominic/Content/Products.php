@@ -27,7 +27,7 @@ include("content_" . strtolower($language) . ".txt");
       <h1><?= $products_title ?></h1>
     </div>
 
-    <a href="../LoginRegister.php"><button>Login/Register</button></a>
+    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">

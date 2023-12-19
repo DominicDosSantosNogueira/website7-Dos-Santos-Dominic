@@ -8,7 +8,7 @@
   $activePage = 1; 
   include '../navi.txt';
   navBar($activePage, $language);
-  include("content_" . strtolower($language) . ".txt");
+  
   ?>
     
     <div style="overflow:auto">
@@ -22,7 +22,7 @@
   <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
   <h1><a href="Home.php"></a> Transformationmarket</h1>
   <div2>
-  <a href="../LoginRegister.php"><button>Login/Register</button></a>
+  <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   
 </div2>
 
@@ -35,8 +35,9 @@
   
   
   <div class="main">
-    <p><?= $home_description ?></p>
-    <h3><?= $home_explanation ?></h3>
+    <p><?= $arrayOfStrings["Productflec"] ?>
+    </p>
+    <h3><?= $arrayOfStrings["Productfind"]  ?></h3>
     
   </div>
     <h3>Bankais</h3>
