@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 4;
-  include '../navi.txt';
+  include 'navi.txt';
   navBar($activePage, $language);
   
 include("content_" . strtolower($language) . ".txt");
@@ -25,7 +25,7 @@ include("content_" . strtolower($language) . ".txt");
       <h1><?= $arrayOfStrings["members_title"] ?></h1>
     </div>
 
-    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
+    <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="table">

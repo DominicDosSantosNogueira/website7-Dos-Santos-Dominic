@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 6; // Adjust the activePage based on your navigation structure
-  include '../navi.txt';
+  include 'navi.txt';
   navBar($activePage, $language);
 
   
@@ -25,7 +25,7 @@
       <h1><a href="Home.php"> Transformationmarket</a></h1>
       <h1><?= $arrayOfStrings['Product_title']?></h1>
     </div>
-    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
+    <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">

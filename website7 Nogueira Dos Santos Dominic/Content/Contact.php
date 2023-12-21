@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 3;
-  include '../navi.txt';
+  include 'navi.txt';
   navBar($activePage, $language);
   ?>
 </head>
@@ -20,7 +20,7 @@
       <h1><?= $arrayOfStrings["contact_title"]   ?></h1>
     </div>
 
-    <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
+    <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">

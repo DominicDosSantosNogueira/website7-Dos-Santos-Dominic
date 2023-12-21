@@ -5,9 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <?php
+  $activePage = 7;
+  include 'navi.txt';
+  navBar($activePage, $language);
+  ?>
+   
 </head>
 
-<body>
+<body style="font-family:Verdana;color:#0c0b0b;">
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+
+  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+  <h1><a href="Home.php"></a> Transformationmarket</h1>
+  <h2>Login</h2>
+  </div>
+  
     <?php
     $visibleForm = true;
 

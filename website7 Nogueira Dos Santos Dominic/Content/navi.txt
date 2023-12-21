@@ -71,6 +71,11 @@
       else  print("inactive");
       ?> " href="AddProduct.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Add Products";
         else  print "Ajouter produits"; ?>  </a>
+        <a class=" <?php
+      if ($activePage == 7) print("active");
+      else  print("inactive");
+      ?> " href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
+        else  print "Connecter/Enregistrer"; ?>  </a>
       
       
   
