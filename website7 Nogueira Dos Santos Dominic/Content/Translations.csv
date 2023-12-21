@@ -8,9 +8,19 @@ ContactLocation;Location;Emplacement
 ContactEmail;Send email for support;Envoyer un email pour le support
 ContactPhone;Phone number: 420 690 007;Numéro de téléphone:420 690 007
 ProductBuy;Buy;Acheter
+Product_title;Products;Produits
 about_title;About;Sur 
 ui_title;UI;UI 
 contact_title;Contact;Contact
 Contactplace;Jojo Land;Pays Jojo
 Login/Register;Login/Register;Connecter/Enregistrer
 members_title;Members;Membres
+members_name;Name;Nom
+members_position;Position;Position
+members_Email;Email;courriel
+Add_product;Add Product;Ajouter Produit
+Product_Name;Product Name:;Nom de produit:
+Add_product_price;Price:;Prix:
+Add_product_png;Only PNG images are allowed.;Seulement des images png sont autorisées.
+Add_product_error;Error uploading the image.;Erreur en enregistron l'image.
+Add_Product_Success;Product added successfully!;Ajoutation du produit success!

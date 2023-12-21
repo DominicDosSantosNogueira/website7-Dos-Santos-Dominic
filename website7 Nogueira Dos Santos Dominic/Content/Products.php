@@ -12,7 +12,6 @@
   include '../navi.txt';
   navBar($activePage, $language);
   
-include("content_" . strtolower($language) . ".txt");
 ?>
 </head>
 
@@ -24,14 +23,14 @@ include("content_" . strtolower($language) . ".txt");
           src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $products_title ?></h1>
+      <h1><?= $arrayOfStrings['Product_title']?></h1>
     </div>
 
     <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">
-  <h2><?= $products_title ?></h2>
+  <h2><?= $arrayOfStrings['Product_title']?></h2>
 
   <div class="AllProducts">
   <?php
@@ -83,7 +82,7 @@ include("content_" . strtolower($language) . ".txt");
          // Add an else condition to avoid printing English description and price when language is French
      }
  
-     print '<button onclick="buyProduct(' . $product[0] . ')">' . $buy_button_text . '</button>';
+     print '<button onclick="buyProduct(' . $product[0] . ')">' . $arrayOfStrings['ProductBuy'] . '</button>';
      print '</div>';
  }
  

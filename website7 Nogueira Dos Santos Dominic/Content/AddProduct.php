@@ -13,7 +13,7 @@
   include '../navi.txt';
   navBar($activePage, $language);
 
-  include("content_" . strtolower($language) . ".txt");
+  
   ?>
 </head>
 
@@ -23,13 +23,13 @@
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $products_title ?></h1>
+      <h1><?= $arrayOfStrings['Product_title']?></h1>
     </div>
     <a href="../LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
   </div>
 
   <div class="main">
-    <h2>Add Product</h2>
+    <h2><?= $arrayOfStrings['Add_product']?></h2>
     <?php
 
 
@@ -71,13 +71,12 @@ $newProduct = "$productId,$productName,$description,$description_fr,$price," . b
           $newProduct = "$productId,$productName,$description,$description_fr,$price," . basename($_FILES['image']['name']) . PHP_EOL;
           file_put_contents('product_list.txt', $newProduct, FILE_APPEND | LOCK_EX);
   
-          echo '<p>Product added successfully!</p>';
+          echo '<p>' . $arrayOfStrings['Add_Product_Success'] .'</p>';
       } else {
-          echo '<p>Error uploading the image.</p>';
+          echo '<p>' . $arrayOfStrings['Add_product_error'] .' </p>';
       }
   } else {
-      echo '<p>Only PNG images are allowed.</p>';
-  }
+    echo '<p>' . $arrayOfStrings['Add_product_png'] . '</p>';  }
 }  
 
 // Function to generate a new product ID
@@ -111,7 +110,7 @@ function generateProductId($filename)
   <!-- ... (previous HTML code) ... -->
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-  <label for="productName">Product Name:</label>
+  <label for="productName"><?= $arrayOfStrings['Product_Name']?></label>
   <input type="text" name="productName" required><br>
 
   <label for="description">Description (English):</label>
@@ -120,13 +119,13 @@ function generateProductId($filename)
   <label for="description_fr">Description (French):</label>
   <textarea name="description_fr" rows="5" required></textarea><br>
 
-  <label for="price">Price:</label>
+  <label for="price"><?= $arrayOfStrings['Add_product_price']?></label>
   <input type="number" name="price" step="0.01" required><br>
 
   <label for="image">Image (PNG only):</label>
   <input type="file" name="image" accept=".png" required><br>
 
-  <input type="submit" value="Add Product">
+  <input type="submit" value="<?= $arrayOfStrings['Add_product']?>">
 </form>
 
 <!-- ... (remaining HTML code) ... -->

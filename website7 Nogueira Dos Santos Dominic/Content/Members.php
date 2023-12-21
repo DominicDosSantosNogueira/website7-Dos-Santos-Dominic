@@ -30,20 +30,31 @@ include("content_" . strtolower($language) . ".txt");
 
   <div class="table">
     <table>
-      <tr>
-        <th><?= $members_table_header[0] ?></th>
-        <th><?= $members_table_header[1] ?></th>
-        <th><?= $members_table_header[2] ?></th>
-      </tr>
-      <?php foreach ($members_table as $row) : ?>
         <tr>
-          <td><?= $row[0] ?></td>
-          <td><?= $row[1] ?></td>
-          <td><a href="mailto:<?= $row[2] ?>"><?= $row[2] ?></a></td>
+            <th><?= $arrayOfStrings["members_name"]   ?></th>
+            <th><?= $arrayOfStrings["members_position"]   ?></th>
+            <th><?= $arrayOfStrings["members_Email"]   ?></th>
         </tr>
-      <?php endforeach; ?>
+        <?php
+        $members = [
+            ['Son-Goku', 'Leader', 'kakarott@gmail.ve'],
+            ['Ichigo Kurosaki', 'Big Three', 'Ichigo@gmail.ka'],
+            ['Naruto Uzumaki', 'Big Three', 'Hogake@gmail.ko'],
+            ['Mokey D. Ruffy', 'Big Three', 'Pirateking@gmail.gl'],
+            ['Gon', 'New Gen', 'father@gmail.com']
+        ];
+
+        foreach ($members as $row) :
+        ?>
+            <tr>
+                <td><?= $row[0] ?></td>
+                <td><?= $row[1] ?></td>
+                <td><a href="mailto:<?= $row[2] ?>"><?= $row[2] ?></a></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
-  </div>
+</div>
+
   <footer>
     <p>HTML Nogueira Dos Santos Dominic 2024</p>
   </footer>
