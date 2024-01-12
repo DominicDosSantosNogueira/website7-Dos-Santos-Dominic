@@ -109,7 +109,7 @@ function generateProductId($filename)
 
   <!-- ... (previous HTML code) ... -->
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
   <label for="productName"><?= $arrayOfStrings['Product_Name']?></label>
   <input type="text" name="productName" required><br>
 
@@ -120,7 +120,7 @@ function generateProductId($filename)
   <textarea name="description_fr" rows="5" required></textarea><br>
 
   <label for="price"><?= $arrayOfStrings['Add_product_price']?></label>
-  <input type="number" name="price" step="0.01" required><br>
+  <input type="text" name="price" id="priceInput" value="$0.00" required pattern="\$\d+(\.\d{2})?"><br>
 
   <label for="image">Image (PNG only):</label>
   <input type="file" name="image" accept=".png" required><br>

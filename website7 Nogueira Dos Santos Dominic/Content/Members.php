@@ -11,7 +11,7 @@
   include 'navi.txt';
   navBar($activePage, $language);
   
-include("content_" . strtolower($language) . ".txt");
+
 
   ?>
 </head>

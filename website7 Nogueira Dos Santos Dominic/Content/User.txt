@@ -6,3 +6,6 @@ piere;123;Luxembourg
 Jenan;jenan;Luxembourg
 test;3;Luxembourg
 tom;t;Luxembourg
+Ron;155;Luxembourg
+Jared;44;Luxembourg
+post;$2y$10$rWaGz1/ocmtvtoF1Z/t8f.bPYXVIKJ3Q.qcgYghfLBn1O3qQQj0v2;Luxembourg

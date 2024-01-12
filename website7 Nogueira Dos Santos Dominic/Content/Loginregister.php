@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Login Page</title>
     <?php
   $activePage = 7;
@@ -18,9 +19,10 @@
 
   <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
   <h1><a href="Home.php"></a> Transformationmarket</h1>
-  <h2>Login</h2>
-  </div>
   
+  <h2>Login</h2>
+  
+  </div>
     <?php
     $visibleForm = true;
 
@@ -99,7 +101,9 @@
                 print("Passwords match! :).");
  
                 $fileHandle = fopen("User.txt", "a");
-                $newLineForUser = $_POST["UserName"] . ";" . $_POST["Password"] . ";" . $_POST["Country"] . "\n";
+                $hashedPassword = password_hash($_POST["Password"], PASSWORD_DEFAULT);
+$newLineForUser = $_POST["UserName"] . ";" . $hashedPassword . ";" . $_POST["Country"] . "\n";
+
                 fputs($fileHandle, $newLineForUser);
                 fclose($fileHandle);
             } else {
