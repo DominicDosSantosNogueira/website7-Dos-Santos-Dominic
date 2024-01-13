@@ -67,7 +67,7 @@ $newProduct = "$productId,$productName,$description,$description_fr,$price," . b
 
     if ($imageFileType == 'png') {
       if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-          // Append the new product to the product list file
+          
           $newProduct = "$productId,$productName,$description,$description_fr,$price," . basename($_FILES['image']['name']) . PHP_EOL;
           file_put_contents('product_list.txt', $newProduct, FILE_APPEND | LOCK_EX);
   
@@ -107,7 +107,6 @@ function generateProductId($filename)
 ?>
 
 
-  <!-- ... (previous HTML code) ... -->
 
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
   <label for="productName"><?= $arrayOfStrings['Product_Name']?></label>
@@ -128,7 +127,7 @@ function generateProductId($filename)
   <input type="submit" value="<?= $arrayOfStrings['Add_product']?>">
 </form>
 
-<!-- ... (remaining HTML code) ... -->
+
 
   </div>
 
