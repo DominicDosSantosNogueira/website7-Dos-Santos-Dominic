@@ -93,8 +93,7 @@ $visibleForm = true;
     
     ?>
     <?php
-    //var_dump($_GET);
-    //var_dump($_POST);
+    
     $visibleForm = true;
  
     if (isset($_POST["UserName"], $_POST["Password"], $_POST["PasswordAgain"])) {
