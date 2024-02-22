@@ -1,3 +1,15 @@
+<?php
+session_start(); // Start the session
+
+$activePage = 7;
+include 'navi.txt';
+
+$visibleForm = true;
+
+// Your other PHP code continues here...
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,28 +17,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Media/Homecss.css">
-    <?php
-  $activePage = 7;
-  include 'navi.txt';
-  navBar($activePage, $language);
-  ?>
    
+    <?php
+    navBar($activePage, $language);
+    ?>
 </head>
 
 <body style="font-family:Verdana;color:#0c0b0b;">
-<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+    <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="flex-container">
+        <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+        <div>
+            <h1><a href="Home.php">Transformationmarket</a></h1>
+            <?php if(isset($_SESSION['username'])): ?>
+                <h1>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h1>
+            <?php else: ?>
+                <h1><?= $arrayOfStrings["Login"] ?></h1>
+            <?php endif; ?>
+        </div>
+        <?php if(isset($_SESSION['username'])): ?>
+            <a href="logout.php"><button>Logout</button></a>
+        <?php else: ?>
+            <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"] ?></button></a>
+        <?php endif; ?>
+    </div>
 
-  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
-  <div>
-  <h1><a href="Home.php"></a> Transformationmarket</h1>
-  <h1><?= $arrayOfStrings["Login"] ?></h1>
-  </div>
-  <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
-
-  </div>
     <?php
-    $visibleForm = true;
-
     if (isset($_POST["UserName"], $_POST["Password"])) {
         $visibleForm = false;
         $userExists = false;
@@ -49,7 +64,6 @@
             $visibleForm = true;
         }
     }
-    
 
     if ($visibleForm) {
     ?>
@@ -68,6 +82,15 @@
         </form>
     <?php
     }
+    ?>
+
+    
+</body>
+
+</html>
+
+    <?php
+    
     ?>
     <?php
     //var_dump($_GET);
