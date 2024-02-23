@@ -1,12 +1,10 @@
 <?php
-session_start(); // Start the session
 
 $activePage = 7;
 include 'navi.txt';
 
 $visibleForm = true;
 
-// Your other PHP code continues here...
 
 ?>
 

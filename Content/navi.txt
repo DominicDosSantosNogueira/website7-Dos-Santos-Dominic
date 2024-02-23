@@ -13,6 +13,8 @@
 
 <body>
   <?php
+
+  session_start();
   $language = "EN";
   //print($_server["PHP_SELF"]);
   if (isset($_GET["lang"])) {
@@ -76,6 +78,7 @@
       else  print("inactive");
       ?> " href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
         else  print "Connecter/Enregistrer"; ?>  </a>
+        
       
       
   
