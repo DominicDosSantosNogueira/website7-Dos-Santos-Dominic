@@ -26,6 +26,7 @@ Add_product_error;Error uploading the image.;Erreur en enregistron l'image.
 Add_Product_Success;Product added successfully!;Ajoutation du produit success!
 Login_type_username;Type your username:;Tapez votre nom d'utilisateur:
 Login_type_password;Type your password:;Tapez votre mot de passe:
+Login_again;Type teh same password again:;Tapez le meme mot de passe:
 Login_button;Login;Connecter
 Register_button;Register;Enregistrer
 Country_residence;Please choose your country of residence:;Veuillez choisir votre pays de résidence:

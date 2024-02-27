@@ -154,7 +154,7 @@ $newLineForUser = $_POST["UserName"] . ";" . $hashedPassword . ";" . $_POST["Cou
                 <input type="password" name="Password">
             </div>
             <div>
-                Please type the same Password:
+                <?= $arrayOfStrings["Login_again"] ?>
                 <input type="password" name="PasswordAgain">
             </div>
             <div>
