@@ -6,7 +6,7 @@ include 'navi.txt';
 $_SESSION = array();
 
 // Destroy the session
-session_destroy();
+
 navBar($activePage, $language);
 // Redirect to the login page or any other page as needed
 header("Location: Loginregister.php");
