@@ -1,0 +1,1 @@
+select * ClientId from Website.Clients;
