@@ -22,7 +22,7 @@
   <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
   <h1><a href="Home.php"></a> Transformationmarket</h1>
   <div2>
-  <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
+  <a href="logout.php">Logout</a>
   
 </div2>
 
