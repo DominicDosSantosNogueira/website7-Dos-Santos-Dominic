@@ -26,7 +26,8 @@
       <h1><?= $arrayOfStrings["about_title"]?></h1>
     </div>
 
-    <a href="LoginRegister.php"><button><?= $arrayOfStrings["Login/Register"]   ?></button></a>
+    <a href="logout.php">Logout</a>
+
   </div>
 
   <div class="main">

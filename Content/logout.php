@@ -1,27 +1,7 @@
-
 <?php
-$activePage = 8;
-include 'navi.txt';
-// Unset all of the session variables
-$_SESSION = array();
-
-// Destroy the session
-
-navBar($activePage, $language);
-// Redirect to the login page or any other page as needed
-header("Location: Loginregister.php");
+session_start();
+session_unset();
+session_destroy();
+header("Location: Home.php"); // Replace index.php with the path to your home page
 exit;
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>

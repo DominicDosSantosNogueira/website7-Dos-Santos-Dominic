@@ -1,58 +1,82 @@
 <?php
 session_start();
 
-// Check if the user is logged in or not
-if (!isset($_SESSION["UserLoggedIn"])) {
-    $_SESSION["UserLoggedIn"] = false; // Initialize the session variable to false
+// Function to validate user credentials
+function validateUser($username, $password, $userData) {
+    foreach ($userData as $user) {
+        $userInfo = explode(";", $user);
+        if ($userInfo[0] === $username && password_verify($password, $userInfo[1])) {
+            return true;
+        }
+    }
+    return false;
 }
 
-// Log in the user if a username is provided via GET request
-if (isset($_GET["UserName"]) && !empty($_GET["UserName"])) {
-    $_SESSION["UserLoggedIn"] = true;
-    $_SESSION["UserName"] = $_GET["UserName"];
+// Check if the user is already logged in
+if (isset($_SESSION['username'])) {
+    header("Location: Home.php");
+    exit;
 }
 
-// Log out the user if the "Logout" parameter is provided via GET request
-if (isset($_GET["Logout"])) {
-    $_SESSION["UserLoggedIn"] = false;
-    session_unset(); // Unset all session variables
-    session_destroy(); // Destroy the session
-    header("Location: Home.php"); // Redirect the user to the welcome page after logout
-    exit(); // Stop executing the script
+// Check if the login form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Read user data from file
+    $userData = file("user.txt", FILE_IGNORE_NEW_LINES);
+    
+    // Validate login credentials
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (validateUser($username, $password, $userData)) {
+        // Authentication successful, set session variables
+        $_SESSION['username'] = $username;
+        header("Location: Home.php");
+        exit;
+    } else {
+        $loginError = "Invalid username or password. Please try again.";
+    }
+}
+
+// Check if the registration form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+    $username = $_POST['newUsername'];
+    $password = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
+    
+    // Append new user data to the file
+    file_put_contents("user.txt", "$username;$password;Luxembourg\n", FILE_APPEND);
+    $_SESSION['username'] = $username;
+    header("Location: Home.php");
+    exit;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login System</title>
+    <title>Login/Register</title>
 </head>
-
 <body>
 
-    <?php
-    if (!$_SESSION["UserLoggedIn"]) {
-        ?>
-        <h1>You are not recognized. Please Login:</h1>
-        <form method="GET">
-            Please type your name:
-            <input name="UserName">
-            <input type="submit" value="Login">
-        </form>
-    <?php
-    } else {
-        ?>
-        <h1>Welcome back, <?= $_SESSION["UserName"] ?> </h1>
-        <form method="GET">
-            <input type="submit" name="Logout" value="Logout">
-        </form>
-    <?php
-    }
-    ?>
+<h2>Login</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+</form>
+
+<?php if (isset($loginError)) echo "<p>$loginError</p>"; ?>
+
+<h2>Register</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <label for="newUsername">New Username:</label><br>
+    <input type="text" id="newUsername" name="newUsername" required><br>
+    <label for="newPassword">New Password:</label><br>
+    <input type="password" id="newPassword" name="newPassword" required><br><br>
+    <input type="submit" name="register" value="Register">
+</form>
 
 </body>
-
 </html>
