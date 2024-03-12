@@ -1,5 +1,13 @@
+
 <?php
-session_start();
+
+
+$activePage = 7; 
+  include 'navi.txt';
+  navBar($activePage, $language);
+  ?>
+ 
+  <?php
 
 // Function to validate user credentials
 function validateUser($username, $password, $userData) {
@@ -42,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $password = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
     
     // Append new user data to the file
-    file_put_contents("user.txt", "$username;$password;Luxembourg\n", FILE_APPEND);
+    file_put_contents("user.txt", "$username;$password", FILE_APPEND);
     $_SESSION['username'] = $username;
     header("Location: Home.php");
     exit;
@@ -55,7 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Register</title>
+    <div style="overflow:auto">
 </head>
+<body style="font-family:Verdana;color:#0c0b0b;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+  <h1><a href="Home.php"></a> Transformationmarket</h1>
+  <div2>
+  <a href="logout.php">Logout</a>
 <body>
 
 <h2>Login</h2>

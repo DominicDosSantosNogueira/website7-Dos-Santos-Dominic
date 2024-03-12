@@ -9,11 +9,11 @@ CREATE TABLE users (
 );
 
 -- Insert data into the 'users' table
-INSERT INTO users (username, password_hash, location)
+INSERT INTO users (username, password_hash)
 VALUES
-('post', '$2y$10$rWaGz1/ocmtvtoF1Z/t8f.bPYXVIKJ3Q.qcgYghfLBn1O3qQQj0v2', 'Luxembourg'),
-('Timmy', '$2y$10$EnEoeGm9l1Fo.tnaVpxuLurvu2EhZbxghMvgNhDgKkrwP0ckf4BPO', 'Luxembourg'),
-('Dominc', '$2y$10$mJY.9q7rjnoZBfq90mzvvOdzKQ3t0WxrfD3BZqzf1i8HW0gV142Oq', 'Luxembourg');
+('post', '$2y$10$rWaGz1/ocmtvtoF1Z/t8f.bPYXVIKJ3Q.qcgYghfLBn1O3qQQj0v2'),
+('Timmy', '$2y$10$EnEoeGm9l1Fo.tnaVpxuLurvu2EhZbxghMvgNhDgKkrwP0ckf4BPO'),
+('Dominc', '$2y$10$mJY.9q7rjnoZBfq90mzvvOdzKQ3t0WxrfD3BZqzf1i8HW0gV142Oq');
 
 
 
