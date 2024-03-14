@@ -3,6 +3,7 @@
 
 
 $activePage = 7; 
+include 'db_connection.php';
   include 'navi.txt';
   navBar($activePage, $language);
   ?>
