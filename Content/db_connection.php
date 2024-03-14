@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Database connection parameters
 $servername = "localhost"; // Change this if your database server is hosted elsewhere
 $username = "root"; // Replace with your MySQL username

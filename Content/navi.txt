@@ -14,7 +14,7 @@
 <body>
   <?php
 
-  session_start();
+  
   $language = "EN";
   //print($_server["PHP_SELF"]);
   if (isset($_GET["lang"])) {
