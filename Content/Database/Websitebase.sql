@@ -3,17 +3,14 @@ use Website;
 
 -- Create the 'users' table
 CREATE TABLE users (
-    username VARCHAR(255),
+    UserId int not null auto_increment primary key,
+    username VARCHAR(255) unique,
     password_hash VARCHAR(255),
-    location VARCHAR(255)
+    location VARCHAR(255),
+    UserRole VARCHAR(25)
 );
 
 -- Insert data into the 'users' table
-INSERT INTO users (username, password_hash)
-VALUES
-('post', '$2y$10$rWaGz1/ocmtvtoF1Z/t8f.bPYXVIKJ3Q.qcgYghfLBn1O3qQQj0v2'),
-('Timmy', '$2y$10$EnEoeGm9l1Fo.tnaVpxuLurvu2EhZbxghMvgNhDgKkrwP0ckf4BPO'),
-('Dominc', '$2y$10$mJY.9q7rjnoZBfq90mzvvOdzKQ3t0WxrfD3BZqzf1i8HW0gV142Oq');
 
 
 
@@ -36,4 +33,54 @@ VALUES
 ('Ozaru', 'Lets you transform into a giant monkey with massive power', 'Te permet de te transformer en macaque géant avec un pouvoir gigantesque', 3000, 'ozaru.png'),
 ('Beast', 'Makes your hair white and absurdly long', 'Blanchis tes cheveux et te donne des cheveux de longueur absurde', 30000, 'Beast.png'),
 ('Genkidama', 'Big blue ball', 'Grande balle bleue', 9000, 'Genki.png');
+
+
+CREATE TABLE translations(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Identifier VARCHAR(255),
+    English VARCHAR(255),
+    French VARCHAR(255)
+);
+
+
+
+INSERT INTO translations (Identifier, English, French)
+VALUES
+Stringidentifier;StringTexten;StringTextfr
+("Productflec";"The best Transformation market out there";"Le meilleur marché de la transformation")
+("Productfind";"You wont find these transformations anywhere else";"Vous ne trouverez pas ces transformations ailleurs")
+("about_description";"In this enterprise we sell most of the new achievable transformations.";"Dans cette entreprise nous vendons la plupart des transformations réalisables." )
+("Aboutupdates";"Updates";"Mise a jour")
+("Aboutupdates1";"Be aware that some outdated transformations may leave the market and new ones may be added.";"Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.")
+("Aboutupdates2";"Be aware that some outdated transformations may leave the market and new ones may be added.";"Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.")
+("ContactLocation";"Location";"Emplacement")
+("ContactEmail";"Send email for support";"Envoyer un email pour le support")
+("ContactPhone";"Phone number: 420 690 007";"Numéro de téléphone:420 690 007")
+("ProductBuy";"Buy";"Acheter")
+("Product_title";"Products";"Produits")
+("about_title";"About";"Sur ")
+("ui_title";"UI";"UI ")
+("contact_title";"Contact";"Contact")
+("Contactplace";"Jojo Land";"Pays Jojo")
+("Login/Register";"Login/Register";"Connecter/Enregistrer")
+("members_title";"Members";"Membres")
+("members_name";"Name";"Nom")
+("members_position";"Position";"Position")
+("members_Email";"Email";"courriel")
+("Add_product";"Add Product";"Ajouter Produit")
+("Product_Name";"Product Name:";"Nom de produit:")
+("Add_product_price";"Price:";"Prix:")
+("Add_product_png";"Only PNG images are allowed.";"Seulement des images png sont autorisées.")
+("Add_product_error";"Error uploading the image.";"Erreur en enregistron l'image.")
+("Add_Product_Success";"Product added successfully!";"Ajoutation du produit success!")
+("Login_type_username";"Type your username:";"Tapez votre nom d'utilisateur:")
+("Login_type_password";"Type your password:";"Tapez votre mot de passe:")
+("Login_again";"Type the same password again:";"Tapez le meme mot de passe:")
+("Login_button";"Login";"Connecter")
+("Register_button";"Register";"Enregistrer")
+("Country_residence";"Please choose your country of residence:";"Veuillez choisir votre pays de résidence:")
+("Login";"Login";"Enregistrement")
+
+
+
 

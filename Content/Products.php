@@ -1,7 +1,7 @@
 <?php
 // Include the database connection file
-include 'db_connection.php';
 
+include 'db_connection.php';
 // Assuming you have a session variable named 'language' to store the selected language
 // You may replace it with your actual session variable storing the selected language
 

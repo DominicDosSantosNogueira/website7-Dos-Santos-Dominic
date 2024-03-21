@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $activePage = 6;
     include 'navi.txt';
     navBar($activePage, $language);
-    include 'db_connection.php';
+   
     ?>
 </head>
 
