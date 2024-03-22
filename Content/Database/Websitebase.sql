@@ -46,40 +46,39 @@ CREATE TABLE translations(
 
 INSERT INTO translations (Identifier, English, French)
 VALUES
-Stringidentifier;StringTexten;StringTextfr
-("Productflec";"The best Transformation market out there";"Le meilleur marché de la transformation")
-("Productfind";"You wont find these transformations anywhere else";"Vous ne trouverez pas ces transformations ailleurs")
-("about_description";"In this enterprise we sell most of the new achievable transformations.";"Dans cette entreprise nous vendons la plupart des transformations réalisables." )
-("Aboutupdates";"Updates";"Mise a jour")
-("Aboutupdates1";"Be aware that some outdated transformations may leave the market and new ones may be added.";"Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.")
-("Aboutupdates2";"Be aware that some outdated transformations may leave the market and new ones may be added.";"Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.")
-("ContactLocation";"Location";"Emplacement")
-("ContactEmail";"Send email for support";"Envoyer un email pour le support")
-("ContactPhone";"Phone number: 420 690 007";"Numéro de téléphone:420 690 007")
-("ProductBuy";"Buy";"Acheter")
-("Product_title";"Products";"Produits")
-("about_title";"About";"Sur ")
-("ui_title";"UI";"UI ")
-("contact_title";"Contact";"Contact")
-("Contactplace";"Jojo Land";"Pays Jojo")
-("Login/Register";"Login/Register";"Connecter/Enregistrer")
-("members_title";"Members";"Membres")
-("members_name";"Name";"Nom")
-("members_position";"Position";"Position")
-("members_Email";"Email";"courriel")
-("Add_product";"Add Product";"Ajouter Produit")
-("Product_Name";"Product Name:";"Nom de produit:")
-("Add_product_price";"Price:";"Prix:")
-("Add_product_png";"Only PNG images are allowed.";"Seulement des images png sont autorisées.")
-("Add_product_error";"Error uploading the image.";"Erreur en enregistron l'image.")
-("Add_Product_Success";"Product added successfully!";"Ajoutation du produit success!")
-("Login_type_username";"Type your username:";"Tapez votre nom d'utilisateur:")
-("Login_type_password";"Type your password:";"Tapez votre mot de passe:")
-("Login_again";"Type the same password again:";"Tapez le meme mot de passe:")
-("Login_button";"Login";"Connecter")
-("Register_button";"Register";"Enregistrer")
-("Country_residence";"Please choose your country of residence:";"Veuillez choisir votre pays de résidence:")
-("Login";"Login";"Enregistrement")
+('Productflec', 'The best Transformation market out there', 'Le meilleur marché de la transformation'),
+('Productfind', 'You wont find these transformations anywhere else', 'Vous ne trouverez pas ces transformations ailleurs'),
+('about_description', 'In this enterprise we sell most of the new achievable transformations.', 'Dans cette entreprise nous vendons la plupart des transformations réalisables.'),
+('Aboutupdates', 'Updates', 'Mise a jour'),
+('Aboutupdates1', 'Be aware that some outdated transformations may leave the market and new ones may be added.', 'Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.'),
+('Aboutupdates2', 'Be aware that some outdated transformations may leave the market and new ones may be added.', 'Sachez que certaines transformations obsolètes peuvent quitter le marché et que de nouvelles peuvent être ajoutées.'),
+('ContactLocation', 'Location', 'Emplacement'),
+('ContactEmail', 'Send email for support', 'Envoyer un email pour le support'),
+('ContactPhone', 'Phone number: 420 690 007', 'Numéro de téléphone:420 690 007'),
+('ProductBuy', 'Buy', 'Acheter'),
+('Product_title', 'Products', 'Produits'),
+('about_title', 'About', 'Sur'),
+('ui_title', 'UI', 'UI'),
+('contact_title', 'Contact', 'Contact'),
+('Contactplace', 'Jojo Land', 'Pays Jojo'),
+('Login/Register', 'Login/Register', 'Connecter/Enregistrer'),
+('members_title', 'Members', 'Membres'),
+('members_name', 'Name', 'Nom'),
+('members_position', 'Position', 'Position'),
+('members_Email', 'Email', 'courriel'),
+('Add_product', 'Add Product', 'Ajouter Produit'),
+('Product_Name', 'Product Name:', 'Nom de produit:'),
+('Add_product_price', 'Price:', 'Prix:'),
+('Add_product_png', 'Only PNG images are allowed.', 'Seulement des images png sont autorisées.'),
+('Add_product_error', 'Error uploading the image.', 'Erreur en enregistron l\'image.'),
+('Add_Product_Success', 'Product added successfully!', 'Ajoutation du produit success!'),
+('Login_type_username', 'Type your username:', 'Tapez votre nom d\'utilisateur:'),
+('Login_type_password', 'Type your password:', 'Tapez votre mot de passe:'),
+('Login_again', 'Type the same password again:', 'Tapez le meme mot de passe:'),
+('Login_button', 'Login', 'Connecter'),
+('Register_button', 'Register', 'Enregistrer'),
+('Country_residence', 'Please choose your country of residence:', 'Veuillez choisir votre pays de résidence:'),
+('Login', 'Login', 'Enregistrement');
 
 
 

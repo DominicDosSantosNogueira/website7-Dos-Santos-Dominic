@@ -59,6 +59,19 @@ $result = $conn->query($sql);
                     echo "<img src='../Media/uploads/" . $row["Image"] . "' alt='" . $row["Name"] . "'>";
                     echo "<button onclick='buyProduct'>Buy</button>";
                     echo "</div>";
+
+                    /*foreach ($products as $product) {
+                        // Get the appropriate description based on the language
+                        $description = ($language == 'FR') ? $product['description_fr'] : $product['description_en'];
+                    
+                        // Output product information with translations
+                        echo "<div class='OneProduct'>";
+                        echo "<h3>" . $product["name"] . "</h3>";
+                        echo "<p>" . $description . "</p>";
+                        echo "<p>" . $product["price"] . "</p>";
+                        echo "<img src='../Media/uploads/" . $product["image"] . "' alt='" . $product["name"] . "'>";
+                        echo "<button onclick='buyProduct()'>Buy</button>"; // Assuming buyProduct() is a JavaScript function
+                        echo "</div>";*/
                 }
             } else {
                 echo "No products found";
