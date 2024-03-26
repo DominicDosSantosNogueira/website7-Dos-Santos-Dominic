@@ -25,14 +25,14 @@ CREATE TABLE products (
 );
 
 -- Insert data into the 'products' table
-INSERT INTO products (Name, English_Description, French_Description, Price, Image)
+INSERT INTO products ( ID, Name, English_Description, French_Description, Price, Image)
 VALUES
-('Ultra Instinct', 'Gives you a white Aura and allows you to dodge everything', 'Te donne une aura blanche qui te permet de esquiver tout', 10000, 'UI.png'),
-('Super Sayian', 'Makes your hair glow yellow and increases your strength', 'Met tes cheveux en jaune et augmente ta force', 6000, 'ssj1.jpg'),
-('Super Sayian 4', 'Makes you go into a super sayian with Ozaru power and red monkey fur', 'Te permet d\'utiliser super sayan avec la force d\'ozaru et de donner de peu rouge', 8000, 'ssj4.png'),
-('Ozaru', 'Lets you transform into a giant monkey with massive power', 'Te permet de te transformer en macaque géant avec un pouvoir gigantesque', 3000, 'ozaru.png'),
-('Beast', 'Makes your hair white and absurdly long', 'Blanchis tes cheveux et te donne des cheveux de longueur absurde', 30000, 'Beast.png'),
-('Genkidama', 'Big blue ball', 'Grande balle bleue', 9000, 'Genki.png');
+( 1,'Ultra Instinct', 'Gives you a white Aura and allows you to dodge everything', 'Te donne une aura blanche qui te permet de esquiver tout', 10000, 'UI.png'),
+( 2, 'Super Sayian', 'Makes your hair glow yellow and increases your strength', 'Met tes cheveux en jaune et augmente ta force', 6000, 'ssj1.jpg'),
+( 3, 'Super Sayian 4', 'Makes you go into a super sayian with Ozaru power and red monkey fur', 'Te permet d\'utiliser super sayan avec la force d\'ozaru et de donner de peu rouge', 8000, 'ssj4.png'),
+( 4, 'Ozaru', 'Lets you transform into a giant monkey with massive power', 'Te permet de te transformer en macaque géant avec un pouvoir gigantesque', 3000, 'ozaru.png'),
+( 5, 'Beast', 'Makes your hair white and absurdly long', 'Blanchis tes cheveux et te donne des cheveux de longueur absurde', 30000, 'Beast.png'),
+( 6, 'Genkidama', 'Big blue ball', 'Grande balle bleue', 9000, 'Genki.png');
 
 
 CREATE TABLE translations(

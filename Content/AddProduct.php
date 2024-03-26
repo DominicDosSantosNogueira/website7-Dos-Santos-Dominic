@@ -10,39 +10,50 @@ function generateProductId($conn)
     return $row['max_id'] + 1;
 }
 
+// Function to handle file upload
+function handleFileUpload($uploadDir)
+{
+    $uploadFile = $uploadDir . basename($_FILES['image']['name']);
+    $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
+
+    if ($imageFileType == 'png') {
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+            return basename($_FILES['image']['name']);
+        } else {
+            return 'Error uploading image.';
+        }
+    } else {
+        return 'Only PNG images are allowed.';
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productName = $_POST["productName"];
     $description = $_POST["description"];
     $description_fr = $_POST["description_fr"];
     $price = $_POST["price"];
 
-    // Generate a new product ID
-    $productId = generateProductId($conn);
-
     // Upload PNG image
     $uploadDir = '../Media/uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['image']['name']);
-    $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
 
-    if ($imageFileType == 'png') {
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-            $sql = "INSERT INTO products (id, name, description, description_fr, price, image) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("isssis", $productId, $productName, $description, $description_fr, $price, basename($_FILES['image']['name']));
-            if ($stmt->execute()) {
-                echo '<p>Product added successfully.</p>';
-            } else {
-                echo '<p>Error adding product.</p>';
-            }
-            $stmt->close();
-        } else {
-            echo '<p>Error uploading image.</p>';
-        }
+    $uploadResult = handleFileUpload($uploadDir);
+    if (strpos($uploadResult, 'Error') === 0) {
+        echo '<p>' . $uploadResult . '</p>';
     } else {
-        echo '<p>Only PNG images are allowed.</p>';
+        $productId = generateProductId($conn);
+        $sql = "INSERT INTO products (ID, Name, English_Description, French_Description, Price, Image) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('isssds', $productId, $productName, $description, $description_fr, $price, $uploadResult);
+        if ($stmt->execute()) {
+            echo '<p>Product added successfully.</p>';
+        } else {
+            echo '<p>Error adding product.</p>';
+        }
+        $stmt->close();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
