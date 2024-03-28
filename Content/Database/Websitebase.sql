@@ -6,7 +6,6 @@ CREATE TABLE users (
     UserId int not null auto_increment primary key,
     username VARCHAR(255) unique,
     password_hash VARCHAR(255),
-    location VARCHAR(255),
     UserRole VARCHAR(25)
 );
 

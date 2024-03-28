@@ -1,20 +1,20 @@
-
 <?php
-
-
 $activePage = 7; 
 include 'db_connection.php';
-  include 'navi.txt';
-  navBar($activePage, $language);
-  ?>
- 
-  <?php
+include 'navi.txt';
+navBar($activePage, $language);
 
 // Function to validate user credentials
-function validateUser($username, $password, $userData) {
-    foreach ($userData as $user) {
-        $userInfo = explode(";", $user);
-        if ($userInfo[0] === $username && password_verify($password, $userInfo[1])) {
+function validateUser($loginUsername, $loginPassword, $conn) {
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $loginUsername);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($loginPassword, $user['password_hash'])) {
             return true;
         }
     }
@@ -29,15 +29,12 @@ if (isset($_SESSION['username'])) {
 
 // Check if the login form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Read user data from file
-    $userData = file("user.txt", FILE_IGNORE_NEW_LINES);
-    
     // Validate login credentials
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    if (validateUser($username, $password, $userData)) {
+    $loginUsername = $_POST['username'];
+    $loginPassword = $_POST['password'];
+    if (validateUser($loginUsername, $loginPassword, $conn)) {
         // Authentication successful, set session variables
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $loginUsername;
         header("Location: Home.php");
         exit;
     } else {
@@ -46,17 +43,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Check if the registration form is submitted
+// Check if the registration form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
-    $username = $_POST['newUsername'];
-    $password = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
+    $registerUsername = $_POST['newUsername'];
+    $registerPassword = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
     
-    // Append new user data to the file
-    file_put_contents("user.txt", "$username;$password", FILE_APPEND);
-    $_SESSION['username'] = $username;
+    // Insert new user data into the database
+    $sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $registerUsername, $registerPassword);
+    $stmt->execute();
+
+    $_SESSION['username'] = $registerUsername;
     header("Location: Home.php");
     exit;
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     <input type="text" id="username" name="username" required><br>
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password" required><br><br>
-    <input type="submit" value="Login">
+    <input type="submit" name="login" value="Login">
 </form>
+
 
 <?php if (isset($loginError)) echo "<p>$loginError</p>"; ?>
 
