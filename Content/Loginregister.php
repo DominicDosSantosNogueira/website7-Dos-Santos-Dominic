@@ -42,8 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Check if the registration form is submitted
-// Check if the registration form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $registerUsername = $_POST['newUsername'];
     $registerPassword = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
