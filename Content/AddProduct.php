@@ -27,7 +27,21 @@ function handleFileUpload($uploadDir)
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Function to check if the user has admin role
+function isAdmin($conn, $username)
+{
+    $sql = "SELECT UserRole FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    return $user['UserRole'] === 'admin';
+}
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['username']) && isAdmin($conn, $_SESSION['username'])) {
     $productName = $_POST["productName"];
     $description = $_POST["description"];
     $description_fr = $_POST["description_fr"];
@@ -53,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
