@@ -1,5 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="../Media/Homecss.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
+    <?php
+    $activePage = 6;
+    include 'navi.txt';
+    navBar($activePage, $language);
+   
+    ?>
+</head>
 <?php
-include 'db_connection.php';
+
 
 // Function to generate a new product ID
 function generateProductId($conn)
@@ -63,30 +80,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['username']) && isAd
         } else {
             echo '<p>Error adding product.</p>';
         }
-        $stmt->close();
+        
     }
 }
 ?>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <link rel="stylesheet" href="../Media/Homecss.css">
-    <link rel="stylesheet" href="mystyle.css">
-    <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
-    <?php
-    $activePage = 6;
-    include 'navi.txt';
-    navBar($activePage, $language);
-   
-    ?>
-</head>
 
 <body style="font-family: Verdana; color: #0f0d0d;">
 

@@ -13,6 +13,21 @@
 
 <body>
   <?php
+  include 'db_connection.php';
+
+// Function to check if the user has admin role
+if (!function_exists('isAdmin')) {
+    // Function to check if the user has admin role
+    function isAdmin($conn, $username)
+    {
+        $sql = "SELECT UserRole FROM users WHERE username = ? AND UserRole = 'admin'";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->num_rows === 1;
+    }
+}
 
   
   $language = "EN";

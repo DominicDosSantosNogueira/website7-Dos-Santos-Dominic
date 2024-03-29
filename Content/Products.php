@@ -1,17 +1,3 @@
-<?php
-// Include the database connection file
-
-include 'db_connection.php';
-// Assuming you have a session variable named 'language' to store the selected language
-// You may replace it with your actual session variable storing the selected language
-
-
-// Fetch products from the database
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +14,21 @@ $result = $conn->query($sql);
     navBar($activePage, $language);
     ?>
 </head>
+<?php
+// Include the database connection file
+
+
+// Assuming you have a session variable named 'language' to store the selected language
+// You may replace it with your actual session variable storing the selected language
+
+
+// Fetch products from the database
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+
+?>
+
+
 
 <body style="font-family:Verdana;color:#0f0d0d;">
 

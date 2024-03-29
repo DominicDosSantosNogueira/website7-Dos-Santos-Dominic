@@ -8,7 +8,7 @@
   $activePage = 1; 
   include 'navi.txt';
   navBar($activePage, $language);
-  include 'db_connection.php';
+  
   
   ?>
     
