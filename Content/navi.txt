@@ -93,6 +93,11 @@ if (!function_exists('isAdmin')) {
       else  print("inactive");
       ?> " href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
         else  print "Connecter/Enregistrer"; ?>  </a>
+        <a class=" <?php
+      if ($activePage == 8) print("active");
+      else  print("inactive");
+      ?> " href="Giverights.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Giverights";
+        else  print "Connecter/Enregistrer"; ?>  </a>
         
       
       
