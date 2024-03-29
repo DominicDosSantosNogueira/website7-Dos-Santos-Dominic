@@ -97,7 +97,7 @@ if (!function_exists('isAdmin')) {
       if ($activePage == 8) print("active");
       else  print("inactive");
       ?> " href="Giverights.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Giverights";
-        else  print "Connecter/Enregistrer"; ?>  </a>
+        else  print "Donner droits"; ?>  </a>
         
       
       

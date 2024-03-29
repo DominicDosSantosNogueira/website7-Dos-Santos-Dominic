@@ -4,8 +4,8 @@ include 'navi.txt';
 navBar($activePage, $language);
 
 // Check if user is logged in and is an admin
-if (!isset($_SESSION['username']) || $_SESSION['UserRole'] !== 'admin') {
-    header("Location: login.php"); // Redirect to login page if not logged in or not admin
+if (!isset($_SESSION['username']) || $_SESSION['UserRole'] == 'admin') {
+    header("Location: Loginregister.php"); // Redirect to login page if not logged in or not admin
     exit();
 }
 
