@@ -9,6 +9,8 @@ CREATE TABLE users (
     UserRole VARCHAR(25)
 );
 
+
+INSERT INTO users (UserID, username, password
 -- Insert data into the 'users' table
 
 
