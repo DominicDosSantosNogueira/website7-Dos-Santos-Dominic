@@ -15,8 +15,23 @@ function validateUser($loginUsername, $loginPassword, $conn) {
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc();
         if (password_verify($loginPassword, $user['password_hash'])) {
+
             return true;
         }
+    }
+    return false;
+}
+function getuserrole($username, $conn) {
+
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        return $user['UserRole'];
     }
     return false;
 }
@@ -35,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (validateUser($loginUsername, $loginPassword, $conn)) {
         // Authentication successful, set session variables
         $_SESSION['username'] = $loginUsername;
+        $_SESSION['UserRole'] = getuserrole($loginUsername, $conn);
         header("Location: Home.php");
         exit;
     } else {
@@ -54,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $stmt->execute();
 
     $_SESSION['username'] = $registerUsername;
+  //  $_SESSION['UserRole'] = 
     header("Location: Home.php");
     exit;
 }

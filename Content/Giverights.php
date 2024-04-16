@@ -1,10 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change User Role</title>
 <?php
-$activePage = 8; 
+    $activePage = 8; 
 include 'navi.txt';
 navBar($activePage, $language);
+?>
+</head>
+<?php
 
 // Check if user is logged in and is an admin
-if (!isset($_SESSION['username']) || $_SESSION['UserRole'] == 'admin') {
+if (!isset($_SESSION['username']) || $_SESSION['UserRole'] =! 'admin') {
     header("Location: Loginregister.php"); // Redirect to login page if not logged in or not admin
     exit();
 }
@@ -35,14 +45,7 @@ $sql = "SELECT UserId, username, UserRole FROM users";
 $result = $conn->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change User Role</title>
-</head>
 
 <body>
     <h2>Change User Role</h2>
