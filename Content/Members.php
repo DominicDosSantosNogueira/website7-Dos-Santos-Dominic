@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 4;
-  include 'navi.txt';
+  include 'navi.php';
   navBar($activePage, $language);
   
   
@@ -23,7 +23,7 @@
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $arrayOfStrings["members_title"] ?></h1>
+      <h1><?= t('members_title') ?></h1>
     </div>
 
     <a href="logout.php">Logout</a>
@@ -32,9 +32,9 @@
   <div class="table">
     <table>
         <tr>
-            <th><?= $arrayOfStrings["members_name"]   ?></th>
-            <th><?= $arrayOfStrings["members_position"]   ?></th>
-            <th><?= $arrayOfStrings["members_Email"]   ?></th>
+            <th><?= t('members_name') ?></th>
+            <th><?= t('members_position') ?></th>
+            <th><?= t('members_Email') ?></th>
         </tr>
         <?php
         $members = [

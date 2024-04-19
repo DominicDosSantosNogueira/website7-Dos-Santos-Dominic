@@ -2,19 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Media/Homecss.css">
+  <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
     <title>Change User Role</title>
 <?php
     $activePage = 8; 
-include 'navi.txt';
+include 'navi.php';
 navBar($activePage, $language);
 ?>
+
+<div style="overflow:auto">
+
 </head>
+
+<body style="font-family:Verdana;color:#0c0b0b;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+  <h1><a href="Home.php"></a> Transformationmarket</h1>
+  <div2>
+  <a href="logout.php">Logout</a>
+  
+</div2>
+
+  
+</div>
+
 <?php
 
 // Check if user is logged in and is an admin
-if (!isset($_SESSION['username']) || $_SESSION['UserRole'] =! 'admin') {
+if (!isset($_SESSION['username']) || $_SESSION['UserRole'] != 'admin') {
     header("Location: Loginregister.php"); // Redirect to login page if not logged in or not admin
     exit();
 }

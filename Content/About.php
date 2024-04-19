@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 2;
-  include 'navi.txt';
+  include 'navi.php';
   navBar($activePage, $language);
   
 
@@ -23,7 +23,7 @@
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $arrayOfStrings["about_title"]?></h1>
+      <h1><?= t('about_title') ?></h1>
     </div>
 
     <a href="logout.php">Logout</a>
@@ -32,13 +32,13 @@
 
   <div class="main">
     <h2>Transformation Market</h2>
-    <p><?= $arrayOfStrings["about_description"] ?></p>
-    <h3><?= $arrayOfStrings["Aboutupdates"] ?></h3>
-    <p><?= $arrayOfStrings["Aboutupdates2"]  ?></p>
+    <p><?= t('about_description') ?></p>
+    <p><?= t('Aboutupdates') ?></p>
+    <p><?= t('Aboutupdates2') ?></p>
   </div>
 
   <div class="right">
-    <h2><?= $arrayOfStrings["ui_title"]  ?></h2>
+  <p><?= t('ui_title') ?></p>
     <img src="../Media/uploads/UI.png" width="500vw">
   </div>
 

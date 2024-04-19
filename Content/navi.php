@@ -35,24 +35,42 @@ if (!function_exists('isAdmin')) {
   if (isset($_GET["lang"])) {
     $language = $_GET["lang"];
   }
+  $_SESSION['language'] = $language; // Set the session variable
 
-  $arrayOfStrings = [];
-  $fileHandle=fopen("Translations.csv","r");
-  while (!feof($fileHandle)){
-    $OneLine = fgets($fileHandle);
-    $ArrayOfExplodedStrings = explode(";", $OneLine);
-    $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $language == "EN"?$ArrayOfExplodedStrings[1]:$ArrayOfExplodedStrings[2];
-    /*
-    if ($language == "en")
-    {
-    $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[1];
-    }
-    else{
-      $arrayOfStrings[$ArrayOfExplodedStrings[0]] = $ArrayOfExplodedStrings[2];
-    }
-*/
+  ?>
+  <?php
+
+  
+  // Check if the language is set in the session
+  
+  
+  // Switch language if the switch button was clicked
+ 
+  
+  // Fetch translations from the database
+  $sqlQuery = $conn->prepare("SELECT * FROM translations");
+  $sqlQuery->execute();
+  $result = $sqlQuery->get_result();
+  
+  // Store translations in an array
+  $translations = [];
+  while ($row = $result->fetch_assoc()) {
+      $translations[$row['Identifier']] = $row;
   }
-
+  
+  // Function to get the translation
+  function t($identifier) {
+    global $translations;
+    $language = $_SESSION['language'] == 'EN' ? 'English' : 'French';
+    return $translations[$identifier][$language];
+}
+  ?>
+  
+ 
+  
+  <!-- Display some text -->
+  
+  <?php
   function navBar($activePage, $language)
   {
 
@@ -78,26 +96,43 @@ if (!function_exists('isAdmin')) {
       else  print("inactive");
       ?> " href="Members.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Members";
         else  print "Membres"; ?>  </a>
-        <a class=" <?php
-      if ($activePage == 5) print("active");
-      else  print("inactive");
-      ?> " href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Products";
-        else  print "Produits"; ?>  </a>
-        <a class=" <?php
-      if ($activePage == 6) print("active");
-      else  print("inactive");
-      ?> " href="AddProduct.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Add Products";
-        else  print "Ajouter produits"; ?>  </a>
-        <a class=" <?php
-      if ($activePage == 7) print("active");
-      else  print("inactive");
-      ?> " href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
-        else  print "Connecter/Enregistrer"; ?>  </a>
-        <a class=" <?php
-      if ($activePage == 8) print("active");
-      else  print("inactive");
-      ?> " href="Giverights.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Giverights";
-        else  print "Donner droits"; ?>  </a>
+        
+        
+        <!-- ... -->
+<a class="<?php
+if ($activePage == 5) print("active");
+else  print("inactive");
+?>" href="Products.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Products";
+else  print "Produits"; ?>  </a>
+
+<?php
+if (isset($_SESSION['UserRole']) && $_SESSION['UserRole'] == 'admin') {
+?>
+    <a class="<?php
+    if ($activePage == 6) print("active");
+    else  print("inactive");
+    ?>" href="AddProduct.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Add Products";
+    else  print "Ajouter des produits"; ?></a>
+
+<a class="<?php
+if ($activePage == 8) print("active");
+else  print("inactive");
+?>" href="Giverights.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Giverights";
+else  print "Donner droits"; ?>  </a>
+<?php
+}
+?>
+
+<a class="<?php
+if ($activePage == 7) print("active");
+else  print("inactive");
+?>" href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
+else  print "Connecter/Enregistrer"; ?>  </a>
+
+
+
+        
+
         
       
       

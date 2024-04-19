@@ -1,7 +1,7 @@
 <?php
 $activePage = 7; 
 
-include 'navi.txt';
+include 'navi.php';
 navBar($activePage, $language);
 
 // Function to validate user credentials
@@ -83,37 +83,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Media/Homecss.css">
+
     <title>Login/Register</title>
     <div style="overflow:auto">
 </head>
-<body style="font-family:Verdana;color:#0c0b0b;">
+<div style="overflow:auto">
+  
 
-<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
-  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
-  <h1><a href="Home.php"></a> Transformationmarket</h1>
-  <div2>
-  <a href="logout.php">Logout</a>
+  </head>
+  
+  <body style="font-family:Verdana;color:#0c0b0b;">
+  
+  <div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+    <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+    <h1><a href="Home.php"></a> Transformationmarket</h1>
+    <div2>
+    <a href="logout.php">Logout</a>
+    
+  </div2>
+  
+    
+  </div>
 <body>
 
-<h2>Login</h2>
+<h2><?= t('Login_button') ?></h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <label for="username">Username:</label><br>
+    <label for="username"><?= t('Login_type_username') ?></label><br>
     <input type="text" id="username" name="username" required><br>
-    <label for="password">Password:</label><br>
+    <label for="password"><?= t('Login_type_password') ?></label><br>
     <input type="password" id="password" name="password" required><br><br>
-    <input type="submit" name="login" value="Login">
+    <input type="submit" name="login" value="<?= t('Login_button') ?>">
 </form>
 
 
 <?php if (isset($loginError)) echo "<p>$loginError</p>"; ?>
 
-<h2>Register</h2>
+<h2><?= t('Register_button') ?></h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <label for="newUsername">New Username:</label><br>
+    <label for="newUsername"><?= t('Login_type_username') ?></label><br>
     <input type="text" id="newUsername" name="newUsername" required><br>
-    <label for="newPassword">New Password:</label><br>
+    <label for="newPassword"><?= t('Login_type_password') ?></label><br>
     <input type="password" id="newPassword" name="newPassword" required><br><br>
-    <input type="submit" name="register" value="Register">
+    <input type="submit" name="register" value="<?= t('Register_button') ?>">
 </form>
 
 </body>

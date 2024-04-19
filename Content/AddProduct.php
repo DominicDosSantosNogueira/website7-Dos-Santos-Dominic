@@ -10,12 +10,18 @@
     <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
     <?php
     $activePage = 6;
-    include 'navi.txt';
+    include 'navi.php';
     navBar($activePage, $language);
    
     ?>
 </head>
 <?php
+// Check if user is logged in and is an admin
+if (!isset($_SESSION['username']) || $_SESSION['UserRole'] != 'admin') {
+    header("Location: Loginregister.php"); // Redirect to login page if not logged in or not admin
+    exit();
+}
+
 
 
 // Function to generate a new product ID
@@ -95,17 +101,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['username']) && isAd
         <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
         <div>
             <h1><a href="Home.php"> Transformationmarket</a></h1>
-            <h1><?= $arrayOfStrings['Product_title']?></h1>
+            <h1><?= t('Product_title') ?></h1>
+            
         </div>
         <a href="logout.php">Logout</a>
 
     </div>
 
     <div class="main">
-        <h2><?= $arrayOfStrings['Add_product']?></h2>
+        <h2><?= t('Add_product') ?></h2>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-            <label for="productName"><?= $arrayOfStrings['Product_Name']?></label>
+            <label for="productName"><p><?= t('Product_Name') ?></p></label>
             <input type="text" name="productName" required><br>
 
             <label for="description">Description (English):</label>
@@ -114,13 +121,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['username']) && isAd
             <label for="description_fr">Description (French):</label>
             <textarea name="description_fr" rows="5" required></textarea><br>
 
-            <label for="price"><?= $arrayOfStrings['Add_product_price']?></label>
+            <label for="price"><p><?= t('Add_product_price') ?></p></label>
             <input type="text" name="price" id="priceInput" value="$0.00" required pattern="\$\d+(\.\d{2})?"><br>
 
             <label for="image">Image (PNG only):</label>
             <input type="file" name="image" accept=".png" required><br>
 
-            <input type="submit" value="<?= $arrayOfStrings['Add_product']?>">
+            <input type="submit" value="<?= t('Add_product') ?>">
         </form>
 
     </div>

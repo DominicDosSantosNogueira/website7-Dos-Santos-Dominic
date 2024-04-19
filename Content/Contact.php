@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
   <?php
   $activePage = 3;
-  include 'navi.txt';
+  include 'navi.php';
   navBar($activePage, $language);
   ?>
 </head>
@@ -17,7 +17,7 @@
     <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
     <div>
       <h1><a href="Home.php"> Transformationmarket</a></h1>
-      <h1><?= $arrayOfStrings["contact_title"]   ?></h1>
+            <h1><?= t('contact_title') ?></h1>
     </div>
 
     <a href="logout.php">Logout</a>
@@ -25,10 +25,10 @@
   </div>
 
   <div class="main">
-    <h1><?= $arrayOfStrings["ContactLocation"]?></h1>
-    <p><?= $arrayOfStrings["Contactplace"] ?></p>
-    <p><a href="mailto:"><?= $arrayOfStrings["ContactEmail"] ?></a></p>
-    <p><?= $arrayOfStrings["ContactPhone"]?></p>
+    <p><?= t('ContactLocation') ?></p>
+    <p><?= t('Contactplace') ?></p>
+    <p><?= t('ContactEmail') ?></p>
+    <p><?= t('ContactPhone') ?></p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.0818350815193!2d-5.860862685353478!3d35.77336608017295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c787f895494a7%3A0xcc477e79633915!2sJojo%20Land!5e0!3m2!1sen!2slu!4v1651656815743!5m2!1sen!2slu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 

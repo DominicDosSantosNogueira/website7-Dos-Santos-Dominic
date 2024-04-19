@@ -10,7 +10,6 @@ CREATE TABLE users (
 );
 
 
-INSERT INTO users (UserID, username, password
 -- Insert data into the 'users' table
 
 

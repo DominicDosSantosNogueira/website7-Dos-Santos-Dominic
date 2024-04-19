@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="myStyle.css?val=<?= time(); ?>" />
     <?php
     $activePage = 5;
-    include 'navi.txt';
+    include 'navi.php';
     navBar($activePage, $language);
     ?>
 </head>
@@ -36,14 +36,14 @@ $result = $conn->query($sql);
         <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
         <div>
             <h1><a href="Home.php"> Transformationmarket</a></h1>
-            <h1><?= $arrayOfStrings['Product_title']?></h1>
+            <h1><?= t('Product_title') ?></h1>
         </div>
 
         <a href="logout.php">Logout</a>
     </div>
 
     <div class="main">
-        <h2><?= $arrayOfStrings['Product_title']?></h2>
+        <h2><?= t('Product_title') ?></h2>
 
         <div class="AllProducts">
             <?php

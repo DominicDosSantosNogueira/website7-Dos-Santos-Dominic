@@ -6,7 +6,7 @@
     <link rel = "stylesheet" type = "text/css" href = "myStyle.css?val=<?= time(); ?>" />
     <?php
   $activePage = 1; 
-  include 'navi.txt';
+  include 'navi.php';
   navBar($activePage, $language);
   
   
@@ -36,9 +36,8 @@
   
   
   <div class="main">
-    <p><?= $arrayOfStrings["Productflec"] ?>
-    </p>
-    <h3><?= $arrayOfStrings["Productfind"]  ?></h3>
+  <p><?= t('Productflec') ?></p>
+  <p><?= t('Productfind') ?></p>
     
   </div>
     <h3>Bankais</h3>
