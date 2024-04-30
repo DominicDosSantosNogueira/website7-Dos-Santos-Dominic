@@ -59,6 +59,8 @@ $result = $conn->query($sql);
                     echo "<p>" . $row["Price"] . "</p>";
                     echo "<img src='../Media/uploads/" . $row["Image"] . "' alt='" . $row["Name"] . "'>";
                     echo "<button onclick='buyProduct'>Buy</button>";
+                      
+
                     echo "</div>";
 
                     /*foreach ($products as $product) {

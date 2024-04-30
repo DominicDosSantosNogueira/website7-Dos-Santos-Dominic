@@ -3,18 +3,25 @@ use Website;
 
 -- Create the 'users' table
 CREATE TABLE users (
-    UserId int not null auto_increment primary key,
-    username VARCHAR(255) unique,
+    UserId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE,
     password_hash VARCHAR(255),
     UserRole VARCHAR(25)
 );
 
+CREATE TABLE Orders (
+    OrderId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES users(UserId)
+);
 
--- Insert data into the 'users' table
+CREATE TABLE list (
+    IdListItem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    OrderId INT NOT NULL,
+    ID INT NOT NULL,
+    CountOfItemsBought INT NOT NULL
+);
 
-
-
--- Create the 'products' table
 CREATE TABLE products (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
@@ -23,6 +30,7 @@ CREATE TABLE products (
     Price DECIMAL(10, 2),
     Image VARCHAR(255)
 );
+
 
 -- Insert data into the 'products' table
 INSERT INTO products ( ID, Name, English_Description, French_Description, Price, Image)
