@@ -128,6 +128,11 @@ if ($activePage == 7) print("active");
 else  print("inactive");
 ?>" href="Loginregister.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Login/Register";
 else  print "Connecter/Enregistrer"; ?>  </a>
+<a class="<?php
+if ($activePage == 9) print("active");
+else  print("inactive");
+?>" href="Shopping cart.php?lang=<?= $language ?>"> <?php if ($language == "EN")  print "Shopping cart";
+else  print "Carte de shopping"; ?>  </a>
 
 
 
