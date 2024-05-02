@@ -35,7 +35,7 @@ $result = $conn->query($sql);
     <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="flex-container">
         <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
         <div>
-            <h1><a href="Home.php"> Transformationmarket</a></h1>
+            <h1><a href="Home.php"> Transformation Market</a></h1>
             <h1><?= t('Product_title') ?></h1>
         </div>
 
@@ -45,6 +45,36 @@ $result = $conn->query($sql);
     <div class="main">
         <h2><?= t('Product_title') ?></h2>
 
+<?php
+        if(isset($_GET["action"])) {
+    if($_GET["action"] == "add") {
+        $product_id = $_GET["id"];
+        if(isset($_SESSION["shopping_cart"])) {
+            $is_available = false;
+            foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+                if ($values['product_id'] == $product_id) {
+                    $is_available = true;
+                    $_SESSION["shopping_cart"][$keys]['product_quantity']++;
+                    break;
+                }
+            }
+            if (!$is_available) {
+                $item_array = array(
+                    'product_id' => $product_id,
+                    'product_quantity' => 1
+                );
+                $_SESSION["shopping_cart"][] = $item_array;
+            }
+        } else {
+            $item_array = array(
+                'product_id' => $product_id,
+                'product_quantity' => 1
+            );
+            $_SESSION["shopping_cart"][] = $item_array;
+        }
+    }
+}
+?>
         <div class="AllProducts">
             <?php
             if ($result->num_rows > 0) {
@@ -58,11 +88,15 @@ $result = $conn->query($sql);
                     
                     echo "<p>" . $row["Price"] . "</p>";
                     echo "<img src='../Media/uploads/" . $row["Image"] . "' alt='" . $row["Name"] . "'>";
-                    echo "<button onclick='buyProduct'>Buy</button>";
-                      
+                    
+                    echo "<a href='Products.php?action=add&id=" . $row["ID"] . "'>Buy</a>";
+                                          
 
                     echo "</div>";
+            
+                    
 
+                    
                     /*foreach ($products as $product) {
                         // Get the appropriate description based on the language
                         $description = ($language == 'FR') ? $product['description_fr'] : $product['description_en'];
@@ -83,11 +117,7 @@ $result = $conn->query($sql);
         </div>
     </div>
 
-    <script>
-        function buyProduct(productId) {
-            alert('Product ' + productId + ' added to the cart. ');
-        }
-    </script>
+   
 
     <footer>
         <p>HTML Nogueira Dos Santos Dominic 2024</p>
