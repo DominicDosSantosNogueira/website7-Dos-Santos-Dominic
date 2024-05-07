@@ -113,7 +113,7 @@ $result = $conn->query($sql);
             } else {
                 echo "No products found";
             }
-            ?>
+                     ?>
         </div>
     </div>
 
