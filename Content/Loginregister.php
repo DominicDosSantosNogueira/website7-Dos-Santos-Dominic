@@ -15,8 +15,7 @@ function validateUser($loginUsername, $loginPassword, $conn) {
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc();
         if (password_verify($loginPassword, $user['password_hash'])) {
-
-            return true;
+            return $user['UserId']; // Return the user's ID
         }
     }
     return false;
@@ -47,9 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate login credentials
     $loginUsername = $_POST['username'];
     $loginPassword = $_POST['password'];
-    if (validateUser($loginUsername, $loginPassword, $conn)) {
+    $userId = validateUser($loginUsername, $loginPassword, $conn);
+    if ($userId !== false) {
         // Authentication successful, set session variables
         $_SESSION['username'] = $loginUsername;
+        $_SESSION['UserId'] = $userId; // Set the user's ID
         $_SESSION['UserRole'] = getuserrole($loginUsername, $conn);
         header("Location: Home.php");
         exit;
@@ -57,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $loginError = "Invalid username or password. Please try again.";
     }
 }
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
@@ -69,8 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $stmt->bind_param("ss", $registerUsername, $registerPassword);
     $stmt->execute();
 
+    // Get the ID of the newly inserted user
+    $userId = $conn->insert_id;
+
     $_SESSION['username'] = $registerUsername;
-  //  $_SESSION['UserRole'] = 
+    $_SESSION['UserId'] = $userId; // Set the user's ID
     header("Location: Home.php");
     exit;
 }

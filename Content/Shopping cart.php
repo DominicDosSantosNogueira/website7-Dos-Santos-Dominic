@@ -28,22 +28,42 @@
 </div2>
 
 </div>
+<form method="post">
 
 <?php
+// Display the items in the shopping cart
+if(isset($_SESSION["shopping_cart"])) {
+    foreach ($_SESSION["shopping_cart"] as $product) {
+        echo "Product ID: " . $product["product_id"] . "<br>";
+        echo "Quantity: " . $product["product_quantity"] . "<br><br>";
+    }
+} else {
+    echo "Your shopping cart is empty.";
+}
 
-                    if(isset($_SESSION["shopping_cart"])) {
-                      foreach ($_SESSION["shopping_cart"] as $product) {
-                          echo "Product ID: " . $product["product_id"] . "<br>";
-                          echo "Quantity: " . $product["product_quantity"] . "<br><br>";
-                      }
-                  } else {
-                      echo "Your shopping cart is empty.";
-                  }
-                    
-                    ?>
-                    
+if (isset($_POST['place_order']) && isset($_SESSION["shopping_cart"])) {
+    // Insert a new order for the current user
+    $userId = $_SESSION['UserId']; // Replace this with the actual user ID
+    $sql = "INSERT INTO Orders (UserId) VALUES ($userId)";
+    $conn->query($sql);
 
+    // Get the ID of the newly inserted order
+    $orderId = $conn->insert_id;
 
+    // Insert each item in the shopping cart into the list table
+    foreach ($_SESSION["shopping_cart"] as $product) {
+        $productId = $product["product_id"];
+        $quantity = $product["product_quantity"];
+        $sql = "INSERT INTO list (OrderId, ID, CountOfItemsBought) VALUES ($orderId, $productId, $quantity)";
+        $conn->query($sql);
+    }
 
+    // Clear the shopping cart
+    unset($_SESSION["shopping_cart"]);
+}
+?>
+
+<input type="submit" name="place_order" value="Place Order">
+</form>
 </body>
 </html>
