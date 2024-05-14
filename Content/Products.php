@@ -89,8 +89,9 @@ $result = $conn->query($sql);
                     echo "<p>" . $row["Price"] . "</p>";
                     echo "<img src='../Media/uploads/" . $row["Image"] . "' alt='" . $row["Name"] . "'>";
                     
-                    echo "<a href='Products.php?action=add&id=" . $row["ID"] . "'>Buy</a>";
-                                          
+                    
+                    echo "<a class='buy-button' href='Products.php?action=add&id=" . $row["ID"] . "'>Buy</a>";
+                                                              
 
                     echo "</div>";
             
