@@ -79,6 +79,7 @@ $result = $conn->query($sql);
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    
                     echo "<div class='OneProduct'>";
                     echo "<h3>" . $row["Name"] . "</h3>";
                     
@@ -89,12 +90,16 @@ $result = $conn->query($sql);
                     echo "<p>" . $row["Price"] . "</p>";
                     echo "<img src='../Media/uploads/" . $row["Image"] . "' alt='" . $row["Name"] . "'>";
                     
+                    if (isset($_SESSION['username'])) {
+                        // If the user is logged in, display the "Buy" button
+                        echo "<a class='buy-button' href='Products.php?action=add&id=" . $row["ID"] . "'>Buy</a>";
+                    } else {
+                        // If the user is not logged in, ask them to log in
+                        echo "<p>Please <a href='login.php'>log in</a> to buy products.</p>";
+                    }
                     
-                    echo "<a class='buy-button' href='Products.php?action=add&id=" . $row["ID"] . "'>Buy</a>";
-                                                              
-
                     echo "</div>";
-            
+                    
                     
 
                     

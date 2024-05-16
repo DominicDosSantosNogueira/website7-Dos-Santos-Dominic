@@ -64,11 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $registerUsername = $_POST['newUsername'];
     $registerPassword = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
-    
+    $userRole = 'Customer'; // Set the user role to 'Customer'
+
     // Insert new user data into the database
-    $sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
+    $sql = "INSERT INTO users (username, password_hash, UserRole) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $registerUsername, $registerPassword);
+    $stmt->bind_param("sss", $registerUsername, $registerPassword, $userRole);
     $stmt->execute();
 
     // Get the ID of the newly inserted user
@@ -76,9 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
     $_SESSION['username'] = $registerUsername;
     $_SESSION['UserId'] = $userId; // Set the user's ID
+    $_SESSION['UserRole'] = $userRole; // Set the user's role
     header("Location: Home.php");
     exit;
 }
+
 
 ?>
 
