@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
         foreach($row as $column => $value) {
             echo "<td>";
             if ($column == 'Image') {
-                echo $column . ": <img src='../Media/uploads/" . $value . "' alt='Image'>";
+                echo $column . ": <img src='../Media/uploads/" . $value . "' alt='Image' style='width:200px; height:200px;'>";
             } else {
                 echo $column . ": " . $value;
             }
