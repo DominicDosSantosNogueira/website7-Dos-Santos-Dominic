@@ -12,6 +12,7 @@ CREATE TABLE users (
 CREATE TABLE Orders (
     OrderId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     UserId INT NOT NULL,
+    
     FOREIGN KEY (UserId) REFERENCES users(UserId)
 );
 

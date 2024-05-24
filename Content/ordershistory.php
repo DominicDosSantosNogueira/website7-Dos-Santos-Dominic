@@ -39,7 +39,7 @@ if(!isset($_SESSION["username"])){
 $userId = $_SESSION['UserId'];
 $userRole = $_SESSION['UserRole'];
 
-$sql = ($userRole == 'admin') ? "SELECT * FROM `orderview2`" : "SELECT * FROM `orderview2` WHERE UserId = $userId";
+$sql = ($userRole == 'admin') ? "SELECT * FROM `orderview3`" : "SELECT * FROM `orderview3` WHERE UserId = $userId";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
             }
             echo "</td>";
         }
-        if ($userRole == 'admin') {
+        if ($userRole == 'admin' && $row['status'] == 'Pending') {
             echo "<td>";
             echo "<a href='confirmOrder.php?orderId=" . $row["OrderId"] . "'>Confirm Order</a>";
             echo "</td>";
