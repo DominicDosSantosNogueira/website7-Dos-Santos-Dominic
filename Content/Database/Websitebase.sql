@@ -12,7 +12,7 @@ CREATE TABLE users (
 CREATE TABLE Orders (
     OrderId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     UserId INT NOT NULL,
-    
+    status VARCHAR(255) DEFAULT 'Pending',
     FOREIGN KEY (UserId) REFERENCES users(UserId)
 );
 
