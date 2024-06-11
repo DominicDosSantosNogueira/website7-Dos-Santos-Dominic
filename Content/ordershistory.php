@@ -42,6 +42,8 @@ $userRole = $_SESSION['UserRole'];
 $sql = ($userRole == 'admin') ? "SELECT * FROM `orderview`" : "SELECT * FROM `orderview` WHERE UserId = $userId";
 $result = $conn->query($sql);
 
+$totalPrice = 0;
+
 if ($result->num_rows > 0) {
     echo "<table>";
     // Output data of each row
@@ -55,6 +57,9 @@ if ($result->num_rows > 0) {
                 echo $column . ": " . $value;
             }
             echo "</td>";
+            if ($column == 'Price' && $row['status'] == 'Processed') {
+                $totalPrice += $value;
+            }
         }
         if ($userRole == 'admin' && $row['status'] == 'Pending') {
             echo "<td>";
@@ -64,6 +69,7 @@ if ($result->num_rows > 0) {
         echo "</tr>";
     }
     echo "</table>";
+    echo "Total Price: " . $totalPrice;
 } else {
     echo "No orders found.";
 }
