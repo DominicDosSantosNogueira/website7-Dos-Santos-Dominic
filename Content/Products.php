@@ -32,16 +32,21 @@ $result = $conn->query($sql);
 
 <body style="font-family:Verdana;color:#0f0d0d;">
 
-    <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="flex-container">
-        <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
-        <div>
-            <h1><a href="Home.php"> Transformation Market</a></h1>
-            <h1><?= t('Product_title') ?></h1>
-        </div>
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;"class="flex-container">
+  <h1><a href="https://maison-orientation.public.lu/de/etudes/portes-ouvertes-des-lycees-luxembourg/ecoles-privees-luxembourg/lpem.html"><img src="../Media/Emile metz icon.png" width="150vw"></a></h1>
+  <h1><a href="Home.php"></a> Transformation Market</h1>
+  <div2>
+  <?php
+  if (isset($_SESSION['UserId'])) {
+    echo '<a href="logout.php">Logout</a>';
+  }
+  ?>
+</div2>
 
-        <a href="logout.php">Logout</a>
-    </div>
+  
+    
 
+  </div>
     <div class="main">
         <h2><?= t('Product_title') ?></h2>
 
