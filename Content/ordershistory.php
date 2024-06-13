@@ -39,6 +39,7 @@ if(!isset($_SESSION["username"])){
 $userId = $_SESSION['UserId'];
 $userRole = $_SESSION['UserRole'];
 
+
 $sql = ($userRole == 'admin') ? "SELECT * FROM `orderview`" : "SELECT * FROM `orderview` WHERE UserId = $userId";
 $result = $conn->query($sql);
 
