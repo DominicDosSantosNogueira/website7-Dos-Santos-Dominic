@@ -90,5 +90,5 @@ VALUES
 ('Login', 'Login', 'Enregistrement');
 
 
-
+create view orderview as select UserId, username, OrderId, Image, Name, Price, status, CountOfItemsBought from users natural join Orders natural join list natural join products; 
 
